@@ -19,26 +19,10 @@
 ## 打開 NVIDIA DGX Spark 網頁 [Open WebUI with Ollama : Set up WebUI on Remote Spark with NVIDIA Sync](https://build.nvidia.com/spark/open-webui/sync)
 網頁中
 ## Step 1. 配置 Docker 權限
-(步驟不變)
-
 ## Step 2. 驗證 Docker 設定，並拉取容器
-(步驟不變)
-
----
-
+(步驟1~2不變)(以上均在 DGX Spark 上執行)
 ## Step 3. 打開 NVIDIA SYNC 軟體的設定畫面
-(不要做)(改成以下步驟)
-## 改為 Step 3. Mac/PC Client 暫時登入 DGX Spark Server (Client端 未指定 Open WebUI 的通信 port number)
-在 Mac/PC Client 上的終端機執行命令
-###### 執行命令後，會看到終端機的命令提示字元變化，從 Mac/PC Client機的 <本機用戶>@<本機名稱>%，變成 DGX Server 機的 <server機用戶>@Spark-xxxx:$，表示已登入。
-```
-# 把 <DGX Spark username> 包含括弧刪掉, 置換成 DGX Spark 開機後登入的 username
-# 把 <192.168.x.x> 包含括弧刪掉, 置換成 DGX Spark 內網 IP 位址 (192.168.x.x) 的值
-ssh <DGX Spark username>@<192.168.x.x>
-```
-
----
-
+(不要做)
 ## Step 4. 新增 Open WebUI 自訂埠配置
 (不要做)(改成以下步驟)
 ## 改為 Step 4. 新增 Open WebUI 自訂埠配置 
@@ -74,26 +58,25 @@ docker run -d \
 exit
 ```
 
-### 改為 Step 4-3. Tablet/Phone/Mac/PC Client 啟動 Tailscale APP，進入與 DGX Spark 相同的 Tailscale VPN 虛擬內網 IP 100.x.x.x
+### 改為 Step 4-3. MAC/PC/Tablet/Phone Client 啟動 Tailscale VPN，進入與 DGX Spark 相同的 Tailscale VPN 虛擬內網 IP 100.x.x.x 環境
 **重要⚠️：先確定你已經完成 [DGX Spark (第05天) 遠端操作 - 學會用 Tailscale 輕鬆取代 WireGuard+Termius 20260116 🟩 中文版](https://github.com/Sniper711/DGX-Spark-Day05-REMOTE-ACCESS-Mastering-Tailscale-to-Easily-Replace-WireGuide-and-Termius-20260116/blob/main/DGX%20Spark%20(%E7%AC%AC05%E5%A4%A9)%20%E9%81%A0%E7%AB%AF%E6%93%8D%E4%BD%9C%20-%20%E5%AD%B8%E6%9C%83%E7%94%A8%20Tailscale%20%E8%BC%95%E9%AC%86%E5%8F%96%E4%BB%A3%20WireGuard%2BTermius%2020260116.md) 的安裝步驟**
-#### 若你用 Tablet/Phone 作為 Client 遠端操作 DGX Spark
-- 啟動 Tailscale APP，讓 Tablet/Phone 進入與 DGX Spark 相同的 Tailscale VPN 虛擬內網 IP 100.x.x.x 環境。
-- 紀錄 DGX Spark 在 Tailscale VPN 虛擬內網的 IP 位置 100.a.b.c 
-#### 若你用 Mac/PC 作為 Client 遠端操作 DGX Spark
-- 進入 設定->VPN->啟動Tailscale，讓 MAC/PC 進入與 DGX Spark 相同的 Tailscale VPN 虛擬內網 IP 100.x.x.x 環境。
-- 紀錄 DGX Spark 在 Tailscale VPN 虛擬內網的 IP 位置 100.a.b.c
+#### 在 DGX Spark Server 上，若你要在 DGX Spark 本機使用 Ollama：
+- 不需要此步驟。
+#### 在 MAC/PC/Tablet/Phone Client 上，若你要在 MAC/PC/Tablet/Phone Client 遠端操作 DGX Spark Server 的 Olllama 服務：
+- 啟動 Tailscale APP，讓 MAC/PC/Tablet/Phone Client 進入與 DGX Spark 相同的 Tailscale VPN 虛擬內網 IP 100.x.x.x 環境。
+- 紀錄 「DGX Spark 在 Tailscale VPN 虛擬內網的 IP 位置」 100.a.b.c 
 
-<sub><sup>＊重開機之後，在 DGX Spark 本機使用 Ollama，只要執行 `Step 5`，超級簡單。</sup></sub>
-<sub><sup>＊重開機之後，在 Tablet/Phone 或 MAC/PC 遠端操作 DGX Spark 的 Ollama 服務，只要執行 `Step 4-3` 與 `Step 5`，超級簡單。</sup></sub>
+<sub><sup>＊重開機之後，若要在 DGX Spark 本機使用 Ollama，只要執行 `Step 5`，超級簡單。</sup></sub>
+<sub><sup>＊重開機之後，若要在 Tablet/Phone/MAC/PC Client 遠端操作 DGX Spark Server 的 Ollama 服務，只要執行 `Step 4-3` 與 `Step 5`，超級簡單。</sup></sub>
 ---
 
 ## Step 5. 啟動 Open WebUI
 (不要做)(改成以下步驟)
-### 若你在 DGX Spark 本機使用 Ollama：
+### 在 DGX Spark Server 上，若你要在 DGX Spark 本機使用 Ollama：
 - 在 DGX Spark 用 `http://localhost:12000` 網址，本機連上 Ollama.
-### 若你在 Tablet/Phone 或 MAC/PC 遠端操作 DGX Spark 的 Ollama 服務：
-- 在 Tablet/Phone 或 MAC/PC 用 `http://100.a.b.c:12000` 網址，遠端連上 DGX Spark 的 Ollama 服務。
-- 其中，`100.a.b.c` 是在以上 `Step 4-3` 紀錄的 「DGX Spark 在 Tailscale VPN 虛擬內網的 IP 位置」
+### 在 MAC/PC/Tablet/Phone Client 上，若你要在 MAC/PC/Tablet/Phone Client 遠端操作 DGX Spark Server 的 Olllama 服務：
+- 在 MAC/PC/Tablet/Phone Client 用 `http://100.a.b.c:12000` 網址，遠端連上 DGX Spark 的 Ollama 服務。
+- 其中，`100.a.b.c` 是在步驟 `Step 4-3` 紀錄的 「DGX Spark 在 Tailscale VPN 虛擬內網的 IP 位置」
 
 <sub><sup>＊重開機之後，在 DGX Spark 本機使用 Ollama，只要執行 `Step 5`，超級簡單。</sup></sub>
 <sub><sup>＊重開機之後，在 Tablet/Phone 或 MAC/PC 遠端操作 DGX Spark 的 Ollama 服務，只要執行 `Step 4-3` 與 `Step 5`，超級簡單。</sup></sub>
