@@ -73,34 +73,27 @@ docker run -d \
 exit
 ```
 
-### 改為 Step 4-3. Mac/PC Client 重新登入 DGX Spark Server (這次 Client端 有指定 Open WebUI 的通信 port number 12000)
-在 Mac/PC Client 上的終端機執行命令
-```
-# 把 <DGX Spark username> 包含括弧刪掉, 置換成 DGX Spark 開機後登入的 username
-# 把 <192.168.x.x> 包含括弧刪掉, 置換成 DGX Spark 內網 IP 位址 (192.168.x.x) 的值
-ssh -4 -N -L 12000:0.0.0.0:3000 <DGX Spark username>@<192.168.x.x>
-```
-<sub><sup>＊重開機之後，只要 Mac/PC (Client) 執行 `Step 4-3` 與 `Step 5`，超級簡單。</sup></sub>
-
-
 ### 改為 Step 4-3. Tablet/Phone/Mac/PC Client 啟動 Tailscale APP，進入與 DGX Spark 相同的 Tailscale 內網 IP 100.x.x.x
 **重要⚠️：先確定你已經完成 [DGX Spark (第05天) 遠端操作 - 學會用 Tailscale 輕鬆取代 WireGuard+Termius 20260116 🟩 中文版](https://github.com/Sniper711/DGX-Spark-Day05-REMOTE-ACCESS-Mastering-Tailscale-to-Easily-Replace-WireGuide-and-Termius-20260116/blob/main/DGX%20Spark%20(%E7%AC%AC05%E5%A4%A9)%20%E9%81%A0%E7%AB%AF%E6%93%8D%E4%BD%9C%20-%20%E5%AD%B8%E6%9C%83%E7%94%A8%20Tailscale%20%E8%BC%95%E9%AC%86%E5%8F%96%E4%BB%A3%20WireGuard%2BTermius%2020260116.md) 的安裝步驟**
 #### 若你用 Tablet/Phone 作為 Client 遠端操作 DGX Spark
-- 
-- 打開 Tailscale APP
+- 啟動 Tailscale APP，讓 Tablet/Phone 進入與 DGX Spark 相同的 Tailscale 內網 IP 100.x.x.x 環境。
+- 紀錄 DGX Spark 在 Tailscale 內網的 IP 位置 100.a.b.c 
+#### 若你用 Mac/PC 作為 Client 遠端操作 DGX Spark
+- 進入 設定->VPN->啟動Tailscale，讓 Tablet/Phone 進入與 DGX Spark 相同的 Tailscale 內網 IP 100.x.x.x 環境。
+- 紀錄 DGX Spark 在 Tailscale 內網的 IP 位置 100.a.b.c 
 
-在 Mac/PC Client 上打開 Tailscale APP (或者在設定->VPN->啟動Tailscale)
-```
-# 把 <DGX Spark username> 包含括弧刪掉, 置換成 DGX Spark 開機後登入的 username
-# 把 <192.168.x.x> 包含括弧刪掉, 置換成 DGX Spark 內網 IP 位址 (192.168.x.x) 的值
-ssh -4 -N -L 12000:0.0.0.0:3000 <DGX Spark username>@<192.168.x.x>
-```
 <sub><sup>＊重開機之後，只要 Mac/PC (Client) 執行 `Step 4-3` 與 `Step 5`，超級簡單。</sup></sub>
 
 ---
 
 ## Step 5. 啟動 Open WebUI
-(步驟不變)
+### 若你在 DGX Spark 本機使用 Ollama：
+- 則步驟不變，依據 NVIDIA 官網步驟5
+- 在 DGX Spark 用 `http://localhost:12000` 網址，本機連上 Ollama.
+### 若你在 Tablet/Phone 或 MAC/PC 遠端操作 DGX Spark 的 Ollama 服務：
+- 則步驟改為
+- 在 Tablet/Phone 或 MAC/PC 用 `http://100.a.b.c:12000` 網址，遠端連上 DGX Spark 的 Ollama 服務。
+- 其中，`100.a.b.c` 是在 `Step 4-3` 紀錄的 「DGX Spark 在 Tailscale 內網的 IP」
 
 <sub><sup>＊重開機之後，只要 Mac/PC (Client) 執行 `Step 4-3` 與 `Step 5`，超級簡單。</sup></sub>
 
