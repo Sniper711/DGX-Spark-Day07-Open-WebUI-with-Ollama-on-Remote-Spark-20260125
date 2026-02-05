@@ -10,8 +10,9 @@
 > - **小修改 NVIDIA官方步驟，確保擁有管理者權限能打開 Ollama 更高階應用** 
 >   - 官方步驟是基於 NVIDIA SYNC app 連線的，只修改三個步驟就能匹配 自己建立的遠端連線
 >   - 修改的 `Step 4-1` 指令，能確保這個登入者擁有管理者身份，從而能打開 Ollama 更高階應用，例如在 Ollama 文字對話背景嵌入 ComfyUI 生圖與生影片服務等等。
-> - **SHH 一行指令登入 DGX Spark**
->   - 重開機之後，只要 Mac/PC (Client) 執行 `Step 4-3` 與 `Step 5`，超級簡單。
+> - **既能 DGX Spark 本機使用 Ollama，也能 Tablet/Phone 或 MAC/PC 遠端操作 DGX Spark 的 Ollama 服務**
+>   - 重開機之後，在 DGX Spark 本機使用 Ollama，只要執行 `Step 5`，超級簡單
+>   - 重開機之後，在 Tablet/Phone 或 MAC/PC 遠端操作 DGX Spark 的 Ollama 服務，只要執行 `Step 4-3` 與 `Step 5`，超級簡單
 
 ---
 
@@ -73,29 +74,29 @@ docker run -d \
 exit
 ```
 
-### 改為 Step 4-3. Tablet/Phone/Mac/PC Client 啟動 Tailscale APP，進入與 DGX Spark 相同的 Tailscale 內網 IP 100.x.x.x
+### 改為 Step 4-3. Tablet/Phone/Mac/PC Client 啟動 Tailscale APP，進入與 DGX Spark 相同的 Tailscale VPN 虛擬內網 IP 100.x.x.x
 **重要⚠️：先確定你已經完成 [DGX Spark (第05天) 遠端操作 - 學會用 Tailscale 輕鬆取代 WireGuard+Termius 20260116 🟩 中文版](https://github.com/Sniper711/DGX-Spark-Day05-REMOTE-ACCESS-Mastering-Tailscale-to-Easily-Replace-WireGuide-and-Termius-20260116/blob/main/DGX%20Spark%20(%E7%AC%AC05%E5%A4%A9)%20%E9%81%A0%E7%AB%AF%E6%93%8D%E4%BD%9C%20-%20%E5%AD%B8%E6%9C%83%E7%94%A8%20Tailscale%20%E8%BC%95%E9%AC%86%E5%8F%96%E4%BB%A3%20WireGuard%2BTermius%2020260116.md) 的安裝步驟**
 #### 若你用 Tablet/Phone 作為 Client 遠端操作 DGX Spark
 - 啟動 Tailscale APP，讓 Tablet/Phone 進入與 DGX Spark 相同的 Tailscale VPN 虛擬內網 IP 100.x.x.x 環境。
-- 紀錄 DGX Spark 在 Tailscale 內網的 IP 位置 100.a.b.c 
+- 紀錄 DGX Spark 在 Tailscale VPN 虛擬內網的 IP 位置 100.a.b.c 
 #### 若你用 Mac/PC 作為 Client 遠端操作 DGX Spark
 - 進入 設定->VPN->啟動Tailscale，讓 MAC/PC 進入與 DGX Spark 相同的 Tailscale VPN 虛擬內網 IP 100.x.x.x 環境。
-- 紀錄 DGX Spark 在 Tailscale 內網的 IP 位置 100.a.b.c 
+- 紀錄 DGX Spark 在 Tailscale VPN 虛擬內網的 IP 位置 100.a.b.c
 
-<sub><sup>＊重開機之後，只要 Mac/PC (Client) 執行 `Step 4-3` 與 `Step 5`，超級簡單。</sup></sub>
-
+<sub><sup>＊重開機之後，在 DGX Spark 本機使用 Ollama，只要執行 `Step 5`，超級簡單。</sup></sub>
+<sub><sup>＊重開機之後，在 Tablet/Phone 或 MAC/PC 遠端操作 DGX Spark 的 Ollama 服務，只要執行 `Step 4-3` 與 `Step 5`，超級簡單。</sup></sub>
 ---
 
 ## Step 5. 啟動 Open WebUI
+(不要做)(改成以下步驟)
 ### 若你在 DGX Spark 本機使用 Ollama：
-- 則步驟不變，依據 NVIDIA 官網步驟5
 - 在 DGX Spark 用 `http://localhost:12000` 網址，本機連上 Ollama.
 ### 若你在 Tablet/Phone 或 MAC/PC 遠端操作 DGX Spark 的 Ollama 服務：
-- 則步驟改為
 - 在 Tablet/Phone 或 MAC/PC 用 `http://100.a.b.c:12000` 網址，遠端連上 DGX Spark 的 Ollama 服務。
-- 其中，`100.a.b.c` 是在 `Step 4-3` 紀錄的 「DGX Spark 在 Tailscale VPN 虛擬內網的 IP」
+- 其中，`100.a.b.c` 是在以上 `Step 4-3` 紀錄的 「DGX Spark 在 Tailscale VPN 虛擬內網的 IP 位置」
 
-<sub><sup>＊重開機之後，只要 Mac/PC (Client) 執行 `Step 4-3` 與 `Step 5`，超級簡單。</sup></sub>
+<sub><sup>＊重開機之後，在 DGX Spark 本機使用 Ollama，只要執行 `Step 5`，超級簡單。</sup></sub>
+<sub><sup>＊重開機之後，在 Tablet/Phone 或 MAC/PC 遠端操作 DGX Spark 的 Ollama 服務，只要執行 `Step 4-3` 與 `Step 5`，超級簡單。</sup></sub>
 
 ---
 
