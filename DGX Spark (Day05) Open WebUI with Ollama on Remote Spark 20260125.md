@@ -1,13 +1,14 @@
-<sub><sup>This is an extension of my previous articles on the two Server/Client connection methods for DGX Spark: [Day01A: Remote Access from Internet Guide](https://github.com/Sniper711/DGX-Spark-Day01A-Remote-Access-from-Internet-Guide-20251220A/blob/main/DGX%20Spark%20(Day01A)%20Remote%20Access%20from%20Internet%20Guide%2020251220A.md) and [Day01B: Local Access from Same Subnet Guide](https://github.com/Sniper711/DGX-Spark-Day01B-Local-Access-from-Same-Subnet-Guide-20251220B/blob/main/DGX%20Spark%20(Day01B)%EF%BC%9ALocal%20Access%20from%20Same%20Subnet%20Guide%2020251220B.md). Here, I'll adapt the official NVIDIA steps (which rely on NVIDIA SYNC app) for setting up Open WebUI on an NVIDIA DGX Spark, without using NVIDIA SYNC app connections. I hope this gives you more options for reference.</sup></sub>
-# DGX Spark (Day02) Open WebUI with Ollama on Remote Spark 20251226
+<sub><sup>This is an extension of my previous article on the Server/Client connection method for DGX Spark: [Day05: Remote Access. Mastering Tailscale to Easily Replace WireGuide+Termius](https://github.com/Sniper711/DGX-Spark-Day01A-Remote-Access-from-Internet-Guide-20251220A/blob/main/DGX%20Spark%20(Day01A)%20Remote%20Access%20from%20Internet%20Guide%2020251220A.md) and [Day01B: Local Access from Same Subnet Guide](https://github.com/Sniper711/DGX-Spark-Day01B-Local-Access-from-Same-Subnet-Guide-20251220B/blob/main/DGX%20Spark%20(Day01B)%EF%BC%9ALocal%20Access%20from%20Same%20Subnet%20Guide%2020251220B.md). Here, I'll adapt the official NVIDIA steps (which rely on NVIDIA SYNC app) for setting up Open WebUI on an NVIDIA DGX Spark, without using NVIDIA SYNC app connections. I hope this gives you more options for reference.</sup></sub>
+# DGX Spark (Day07) Open WebUI with Ollama on Remote Spark 20260125
 ## 🟩 English
 > ## Scenarios & Advantages
 > **Mac/PC Client browser uses the Open WebUI interface → through the self-established remote connections → to run Ollama on DGX Spark Server**
 > - **Based on the interconnection methods of DGX Spark: [Day01A: Remote Access from Internet Guide](https://github.com/Sniper711/DGX-Spark-Day01A-Remote-Access-from-Internet-Guide-20251220A/blob/main/DGX%20Spark%20(Day01A)%20Remote%20Access%20from%20Internet%20Guide%2020251220A.md) and [Day01B: Local Access from Same Subnet Guide](https://github.com/Sniper711/DGX-Spark-Day01B-Local-Access-from-Same-Subnet-Guide-20251220B/blob/main/DGX%20Spark%20(Day01B)%EF%BC%9ALocal%20Access%20from%20Same%20Subnet%20Guide%2020251220B.md)**. 
 >   - Guaranteed stability through the self-estabilished remote connections
 >   - No reliance on NVIDIA SYNC
-> - **Minor modifications to the NVIDIA official steps** 
+> - **Minor modifications to the NVIDIA official steps. Ensure Administrator Privileges for Enabling Advanced Ollama Applications** 
 >   - The official steps are built around NVIDIA SYNC connections; only three steps need to be changed to match the self-established remote connections.
+>   - The modified command in step 4-1 ensures that the logged-in user has administrator privileges, thereby allowing access to advanced Ollama applications, such as embedding ComfyUI image generation and video generation services in the background of Ollama text conversations, and more.
 > - Simple one-line **SSH** command **login to DGX Spark**
 >   - After rebooting, simply have the Mac/PC Client run `Step 4-3` and `Step 5` - it's super easy.
 
@@ -45,7 +46,7 @@ On Mac/PC Client, continue on the Terminal app, run the following command:
 docker run -d \
   --gpus all \
   -p 3000:8080 \
-  -e WEBUI_ADMIN_EMAIL=<admin email address> \ # Note: Replace the entire <admin email address> (including the angle brackets) with the email address you will use to log in to Ollama, to ensure that this login has administrator privileges.
+  -e WEBUI_ADMIN_EMAIL=<admin_email_address> \ # Note: Replace the entire <admin_email_address> (including the angle brackets) with the email address you will use to log in to Ollama, to ensure that this login has administrator privileges.
   -v ollama:/root/.ollama \
   -v open-webui:/app/backend/data \
   --name open-webui \
@@ -58,6 +59,7 @@ docker run -d \
   - **--gpus all** Grant the container access to all NVIDIA GPUs on the DGX Spark host.
   - **-p 3000:8080** Publish (map) port 8080 inside the container to port 3000 on the DGX Spark host.
 (*Note: The 3000 port on DGX Spark can be changed.)
+  - **-e WEBUI_ADMIN_EMAIL=<admin_email_address>** Replace the entire <admin_email_address> (including the angle brackets) with the email address you will use to log in to Ollama, to ensure that this login has administrator privileges, thereby enabling access to advanced Ollama applications, such as embedding ComfyUI image generation and video generation services in the background of Ollama text conversations, and more.
   - **-v ollama:/root/.ollama** Mount the Docker named volume `ollama` stored on the DGX Spark host (typically under /var/lib/docker/volumes/ollama/_data) to `/root/.ollama` inside the container.
   - **-v open-webui:/app/backend/data** Mount the Docker named volume `open-webui` stored on the DGX Spark host (typically under /var/lib/docker/volumes/open-webui/_data) to `/app/backend/data` inside the container.
   - **--name open-webui** Name the container open-webui.
