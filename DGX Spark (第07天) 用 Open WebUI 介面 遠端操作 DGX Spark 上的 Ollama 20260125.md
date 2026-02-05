@@ -47,7 +47,7 @@ ssh <DGX Spark username>@<192.168.x.x>
 docker run -d \
   --gpus all \
   -p 3000:8080 \
-  -e WEBUI_ADMIN_EMAIL=<admin email address> \ # 注意：把整個<admin email address>包括括弧，替換成 將來Ollama登入 用的 email address，以確保這個登入者擁有管理者身份，從而能打開 Ollama 更高階應用，例如在 Ollama 文字對話背景嵌入 ComfyUI 生圖與生影片服務等等。
+  -e WEBUI_ADMIN_EMAIL=<admin_email_address> \ # 注意：把整個<admin_email_address>包括括弧，替換成 將來Ollama登入 用的 email address，以確保這個登入者擁有管理者身份，從而能打開 Ollama 更高階應用，例如在 Ollama 文字對話背景嵌入 ComfyUI 生圖與生影片服務等等。
   -v ollama:/root/.ollama \
   -v open-webui:/app/backend/data \
   --name open-webui \
@@ -58,7 +58,7 @@ docker run -d \
   - **docker** 用 docker 指令
   - **run -d** 跑 containner 但別在terminal上顯示
   - **--gpus all** 用 NVIDIA DGX Spark 的 GPU 高速運算
-  - **-e WEBUI_ADMIN_EMAIL=<admin email address>** 把整個<admin email address>包括括弧，替換成 將來Ollama登入 用的 email address，以確保這個登入者擁有管理者身份，從而能打開 Ollama 更高階應用，例如在 Ollama 文字對話背景嵌入 ComfyUI 生圖與生影片服務等等。
+  - **-e WEBUI_ADMIN_EMAIL=<admin_email_address>** 把整個<admin_email_address>包括括弧，替換成 將來Ollama登入 用的 email address，以確保這個登入者擁有管理者身份，從而能打開 Ollama 更高階應用，例如在 Ollama 文字對話背景嵌入 ComfyUI 生圖與生影片服務等等。
   - **-p 3000:8080** 把實體 DGX Spark 的 3000 port 對應到 虛擬容器 container 的 8080 port (*註：DGX Spark 的 3000 port 這數字可以修改)
   - **-v ollama:/root/.ollama** 把實體 DGX Spark 的 ollama 目錄 掛載到 虛擬容器 container 的 /root/.ollama 目錄 (*註：實體 DGX Spark 目錄通常在 /var/lib/docker/volumes/...之下)
   - **-v open-webui:/app/backend/data** 把實體 DGX Spark 的 open-webui 目錄 掛載到 虛擬容器 container 的 /app/backend/data 目錄 (*註：實體 DGX Spark 目錄通常在 /var/lib/docker/volumes/...之下)
