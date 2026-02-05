@@ -79,7 +79,7 @@ exit
 - 啟動 Tailscale APP，讓 Tablet/Phone 進入與 DGX Spark 相同的 Tailscale 內網 IP 100.x.x.x 環境。
 - 紀錄 DGX Spark 在 Tailscale 內網的 IP 位置 100.a.b.c 
 #### 若你用 Mac/PC 作為 Client 遠端操作 DGX Spark
-- 進入 設定->VPN->啟動Tailscale，讓 Tablet/Phone 進入與 DGX Spark 相同的 Tailscale 內網 IP 100.x.x.x 環境。
+- 進入 設定->VPN->啟動Tailscale，讓 MAC/PC 進入與 DGX Spark 相同的 Tailscale 內網 IP 100.x.x.x 環境。
 - 紀錄 DGX Spark 在 Tailscale 內網的 IP 位置 100.a.b.c 
 
 <sub><sup>＊重開機之後，只要 Mac/PC (Client) 執行 `Step 4-3` 與 `Step 5`，超級簡單。</sup></sub>
