@@ -10,8 +10,9 @@
 > - **Based on the interconnection methods of DGX Spark: [Day05: REMOTE ACCESS - Mastering Tailscale to Easily Replace WireGuide+Termius](https://github.com/Sniper711/DGX-Spark-Day05-REMOTE-ACCESS-Mastering-Tailscale-to-Easily-Replace-WireGuide-and-Termius-20260116/blob/main/DGX%20Spark%20(Day05)%20REMOTE%20ACCESS%20-%20Mastering%20Tailscale%20to%20Easily%20Replace%20WireGuide%2BTermius%2020260116.md)**. 
 >   - Guaranteed stability through the self-estabilished remote connections
 >   - No reliance on NVIDIA SYNC
-> - **Minor modifications to the NVIDIA official steps** 
+> - **Minor modifications to the NVIDIA official steps. Ensure Administrator Privileges for Enabling Advanced Ollama Applications** 
 >   - The official steps are built around NVIDIA SYNC connections; only three steps need to be changed to match the self-established remote connections.
+>   - The modified command in `step 4-1` ensures that the logged-in user has administrator privileges, thereby allowing access to advanced Ollama applications, such as embedding ComfyUI image generation and video generation services in the background of Ollama text conversations, and more.
 > - Simple one-line **SSH** command **login to DGX Spark**
 >   - After rebooting, simply have the Mac/PC Client run `Step 4-3` and `Step 5` - it's super easy.
 ### Congratulations - Now you can run Ollama via your Mac/PC browser — powered by DGX Spark's GPU!
