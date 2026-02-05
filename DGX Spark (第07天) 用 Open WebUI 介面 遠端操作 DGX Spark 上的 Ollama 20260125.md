@@ -31,20 +31,19 @@
 ## 改為 Step 4. 新增 Open WebUI 自訂埠配置 
 
 ### 改為 Step 4-1. 新增 Open WebUI 自訂埠配置
-
-在 DGX Spark Server 的終端機上，執行：
-```
-docker run -d \
-  --gpus all \
-  -p 3000:8080 \
-# 注意：把下方整個<admin_email_address>包括括弧，替換成 將來Ollama登入 用的 email address，以確保這個登入者擁有管理者身份，從而能打開 Ollama 更高階應用，例如在 Ollama 文字對話背景嵌入 ComfyUI 生圖與生影片服務等等。
-  -e WEBUI_ADMIN_EMAIL=<admin_email_address> \ 
-  -v ollama:/root/.ollama \
-  -v open-webui:/app/backend/data \
-  --name open-webui \
-  --restart unless-stopped \
-  ghcr.io/open-webui/open-webui:ollama
-```
+- 在 DGX Spark Server 的終端機上，執行：
+  ```
+  docker run -d \
+    --gpus all \
+    -p 3000:8080 \
+  # 注意：把下方整個<admin_email_address>包括括弧，替換成 將來Ollama登入 用的 email address，以確保這個登入者擁有管理者身份，從而能打開 Ollama 更高階應用，例如在 Ollama 文字對話背景嵌入 ComfyUI 生圖與生影片服務等等。
+    -e WEBUI_ADMIN_EMAIL=<admin_email_address> \ 
+    -v ollama:/root/.ollama \
+    -v open-webui:/app/backend/data \
+    --name open-webui \
+    --restart unless-stopped \
+    ghcr.io/open-webui/open-webui:ollama
+  ```
 - 解釋指令
   - **docker** 用 docker 指令
   - **run -d** 跑 containner 但別在terminal上顯示
@@ -57,9 +56,7 @@ docker run -d \
   - **--restart unless-stopped** 預設開機後自動啟動 container。但若關機前刻意下 docker stop 指令停止 container，則下次開機後不再自動啟動 container。(*註：亦可改成--restart always. 永遠自動啟動)
   - **ghcr.io/open-webui/open-webui:ollama** 使用 Docker image ghcr.io/open-webui/open-webui:ollama 來運行容器
 
-### 改為 Step 4-2. 退出 Step 3 的那次暫時登入 DGX Spark Server (未指定 Open WebUI 的通信 port number)
-在 DGX Spark Server 的終端機上，繼續執行：
-###### 在 Mac/PC Client 上執行命令 執行後，會**看到終端機的命令提示字元變化**，從 DGX Server 機的 <server機用戶>@Spark-xxxx:$，變成 Mac/PC Client機的 <本機用戶>@<本機名稱>%，表示已退出。
+- 接著在 DGX Spark Server 的終端機上，繼續執行：
 ```
 exit
 ```
