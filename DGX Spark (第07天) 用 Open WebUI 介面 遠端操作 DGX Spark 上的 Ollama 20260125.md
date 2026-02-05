@@ -23,16 +23,22 @@
 (步驟1~2不變)(以上均在 DGX Spark 上執行)
 ## Step 3. 打開 NVIDIA SYNC 軟體的設定畫面
 (不要做)
+
 ## Step 4. 新增 Open WebUI 自訂埠配置
 (不要做)(改成以下步驟)
+
+
 ## 改為 Step 4. 新增 Open WebUI 自訂埠配置 
+
 ### 改為 Step 4-1. 新增 Open WebUI 自訂埠配置
-繼續在 Mac/PC Client 上的終端機執行
+
+在 DGX Spark Server 的終端機上，執行：
 ```
 docker run -d \
   --gpus all \
   -p 3000:8080 \
-  -e WEBUI_ADMIN_EMAIL=<admin_email_address> \ # 注意：把整個<admin_email_address>包括括弧，替換成 將來Ollama登入 用的 email address，以確保這個登入者擁有管理者身份，從而能打開 Ollama 更高階應用，例如在 Ollama 文字對話背景嵌入 ComfyUI 生圖與生影片服務等等。
+# 注意：把下方整個<admin_email_address>包括括弧，替換成 將來Ollama登入 用的 email address，以確保這個登入者擁有管理者身份，從而能打開 Ollama 更高階應用，例如在 Ollama 文字對話背景嵌入 ComfyUI 生圖與生影片服務等等。
+  -e WEBUI_ADMIN_EMAIL=<admin_email_address> \ 
   -v ollama:/root/.ollama \
   -v open-webui:/app/backend/data \
   --name open-webui \
@@ -52,14 +58,14 @@ docker run -d \
   - **ghcr.io/open-webui/open-webui:ollama** 使用 Docker image ghcr.io/open-webui/open-webui:ollama 來運行容器
 
 ### 改為 Step 4-2. 退出 Step 3 的那次暫時登入 DGX Spark Server (未指定 Open WebUI 的通信 port number)
-繼續在 Mac/PC Client 上的終端機執行
+在 DGX Spark Server 的終端機上，繼續執行：
 ###### 在 Mac/PC Client 上執行命令 執行後，會**看到終端機的命令提示字元變化**，從 DGX Server 機的 <server機用戶>@Spark-xxxx:$，變成 Mac/PC Client機的 <本機用戶>@<本機名稱>%，表示已退出。
 ```
 exit
 ```
 
 ### 改為 Step 4-3. MAC/PC/Tablet/Phone Client 啟動 Tailscale VPN，進入與 DGX Spark 相同的 Tailscale VPN 虛擬內網 IP 100.x.x.x 環境
-**重要⚠️：先確定你已經完成 [DGX Spark (第05天) 遠端操作 - 學會用 Tailscale 輕鬆取代 WireGuard+Termius 20260116 🟩 中文版](https://github.com/Sniper711/DGX-Spark-Day05-REMOTE-ACCESS-Mastering-Tailscale-to-Easily-Replace-WireGuide-and-Termius-20260116/blob/main/DGX%20Spark%20(%E7%AC%AC05%E5%A4%A9)%20%E9%81%A0%E7%AB%AF%E6%93%8D%E4%BD%9C%20-%20%E5%AD%B8%E6%9C%83%E7%94%A8%20Tailscale%20%E8%BC%95%E9%AC%86%E5%8F%96%E4%BB%A3%20WireGuard%2BTermius%2020260116.md) 的安裝步驟**
+**重要⚠️：先確定你已經完成文章 [DGX Spark (第05天) 遠端操作 - 學會用 Tailscale 輕鬆取代 WireGuard+Termius 20260116 🟩 中文版](https://github.com/Sniper711/DGX-Spark-Day05-REMOTE-ACCESS-Mastering-Tailscale-to-Easily-Replace-WireGuide-and-Termius-20260116/blob/main/DGX%20Spark%20(%E7%AC%AC05%E5%A4%A9)%20%E9%81%A0%E7%AB%AF%E6%93%8D%E4%BD%9C%20-%20%E5%AD%B8%E6%9C%83%E7%94%A8%20Tailscale%20%E8%BC%95%E9%AC%86%E5%8F%96%E4%BB%A3%20WireGuard%2BTermius%2020260116.md) 的安裝步驟**
 #### 在 DGX Spark Server 上，若你要在 DGX Spark 本機使用 Ollama：
 - 不需要此步驟。
 #### 在 MAC/PC/Tablet/Phone Client 上，若你要在 MAC/PC/Tablet/Phone Client 遠端操作 DGX Spark Server 的 Olllama 服務：
