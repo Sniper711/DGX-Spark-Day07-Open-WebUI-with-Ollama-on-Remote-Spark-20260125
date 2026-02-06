@@ -3,16 +3,16 @@
 # DGX Spark (第07天) 用 Open WebUI 介面 遠端操作 DGX Spark 上的 Ollama 20260125
 ## 🟩 中文版
 > ## 適用情境 與 優點
-> **Mac/PC/Tablet/Phone Client 開瀏覽器在 Open WebUI 介面上 → 透過自己建立的遠端連線 → 用 DGX Spark Server 的算力跑 Ollama**
+> **電腦/平板/手機 Client 開瀏覽器在 Open WebUI 介面上 → 透過自己建立的遠端連線 → 用 DGX Spark Server 的算力跑 Ollama**
 > - **基於前面文章 [第05天: 遠端操作 - 學會用 Tailscale 輕鬆取代 WireGuard+Termius](https://github.com/Sniper711/DGX-Spark-Day05-REMOTE-ACCESS-Mastering-Tailscale-to-Easily-Replace-WireGuide-and-Termius-20260116/blob/main/DGX%20Spark%20(%E7%AC%AC05%E5%A4%A9)%20%E9%81%A0%E7%AB%AF%E6%93%8D%E4%BD%9C%20-%20%E5%AD%B8%E6%9C%83%E7%94%A8%20Tailscale%20%E8%BC%95%E9%AC%86%E5%8F%96%E4%BB%A3%20WireGuard%2BTermius%2020260116.md) 建立 Server/Client 的連線方式**
 >   - **100% 連線成功率與穩定度，自己掌握 Server/Client 連線的設定細節**
 >   - 不使用 NVIDIA SYNC app 的連線方式
 > - **小修改 NVIDIA官方步驟，確保擁有管理者權限能打開 Ollama 更高階應用** 
 >   - 官方步驟是基於 NVIDIA SYNC app 連線的，只修改三個步驟就能匹配 自己建立的遠端連線
 >   - 修改的 `Step 4-1` 指令，能確保這個登入者擁有管理者身份，從而能打開 Ollama 更高階應用，例如在 Ollama 文字對話背景嵌入 ComfyUI 生圖與生影片服務等等。
-> - **既能 DGX Spark 本機使用 Ollama，也能 Mac/PC/Tablet/Phone Client 遠端操作 DGX Spark Server 的 Ollama 服務**
+> - **既能 DGX Spark 本機使用 Ollama，也能在 電腦/平板/手機 Client 遠端操作 DGX Spark Server 的 Ollama 服務**
 >   - 重開機之後，在 DGX Spark **本機使用** Ollama，只要執行 `Step 5`，超級簡單
->   - 重開機之後，在 Mac/PC/Tablet/Phone Client **遠端操作** DGX Spark Server 的 Ollama 服務，只要執行 `Step 4-2` 與 `Step 5`，超級簡單
+>   - 重開機之後，在 電腦/平板/手機 Client **遠端操作** DGX Spark Server 的 Ollama 服務，只要執行 `Step 4-2` 與 `Step 5`，超級簡單
 
 ---
 
@@ -61,19 +61,19 @@
   exit
   ```
 
-### 改為 Step 4-2. MAC/PC/Tablet/Phone Client 啟動 Tailscale VPN，進入與 DGX Spark 相同的 Tailscale VPN 虛擬內網 IP 100.x.x.x 環境
+### 改為 Step 4-2. 電腦/平板/手機 Client 啟動 Tailscale VPN，進入與 DGX Spark 相同的 Tailscale VPN 虛擬內網 IP 100.x.x.x 環境
 **重要⚠️：在 `Step 4-2` 開始之前，先確定你已經完成文章 [DGX Spark (第05天) 遠端操作 - 學會用 Tailscale 輕鬆取代 WireGuard+Termius 20260116 🟩 中文版](https://github.com/Sniper711/DGX-Spark-Day05-REMOTE-ACCESS-Mastering-Tailscale-to-Easily-Replace-WireGuide-and-Termius-20260116/blob/main/DGX%20Spark%20(%E7%AC%AC05%E5%A4%A9)%20%E9%81%A0%E7%AB%AF%E6%93%8D%E4%BD%9C%20-%20%E5%AD%B8%E6%9C%83%E7%94%A8%20Tailscale%20%E8%BC%95%E9%AC%86%E5%8F%96%E4%BB%A3%20WireGuard%2BTermius%2020260116.md) 的安裝步驟**
 - 若你要在 DGX Spark 本機使用 Ollama：
   - 在 DGX Spark Server 上
     - 不需要額外設定。
-- 若你要在 MAC/PC/Tablet/Phone Client 遠端操作 DGX Spark Server 的 Olllama 服務：
-  - 在 MAC/PC/Tablet/Phone Client 上
-    - 啟動 Tailscale APP，讓 MAC/PC/Tablet/Phone Client 進入與 DGX Spark Server 相同的 Tailscale VPN 虛擬內網 IP 100.x.x.x 環境。
+- 若你要在 電腦/平板/手機 Client 遠端操作 DGX Spark Server 的 Olllama 服務：
+  - 在 電腦/平板/手機 Client 上
+    - 啟動 Tailscale APP，讓 電腦/平板/手機電腦/平板/手機 Client 進入與 DGX Spark Server 相同的 Tailscale VPN 虛擬內網 IP 100.x.x.x 環境。
     - **紀錄 「DGX Spark 在 Tailscale VPN 虛擬內網的 IP 位置」 `100.a.b.c`** 
 
 <sub><sup>＊重開機之後，若要在 DGX Spark 本機使用 Ollama，只要執行 `Step 5`，超級簡單。</sup></sub>
   
-<sub><sup>＊重開機之後，若要在 Tablet/Phone/MAC/PC Client 遠端操作 DGX Spark Server 的 Ollama 服務，只要執行 `Step 4-2` 與 `Step 5`，超級簡單。</sup></sub>
+<sub><sup>＊重開機之後，若要在 電腦/平板/手機 Client 遠端操作 DGX Spark Server 的 Ollama 服務，只要執行 `Step 4-2` 與 `Step 5`，超級簡單。</sup></sub>
 
 ---
 
@@ -82,14 +82,14 @@
 - 若你要在 DGX Spark 本機使用 Ollama：
   - 在 DGX Spark Server 上
     - 用 `http://localhost:12000` 網址，本機連上 Ollama.
-- 若你要在 MAC/PC/Tablet/Phone Client 遠端操作 DGX Spark Server 的 Olllama 服務：
-  - 在 MAC/PC/Tablet/Phone Client 上
+- 若你要在 電腦/平板/手機 Client 遠端操作 DGX Spark Server 的 Olllama 服務：
+  - 在 電腦/平板/手機 Client 上
     - 用 `http://100.a.b.c:12000` 網址，遠端連上 DGX Spark 的 Ollama 服務。
     - 其中，`100.a.b.c` 是在步驟 `Step 4-2` 紀錄的 「DGX Spark 在 Tailscale VPN 虛擬內網的 IP 位置」
 
 <sub><sup>＊重開機之後，若要在 DGX Spark 本機使用 Ollama，只要執行 `Step 5`，超級簡單。</sup></sub>
   
-<sub><sup>＊重開機之後，若要在 Tablet/Phone/MAC/PC Client 遠端操作 DGX Spark Server 的 Ollama 服務，只要執行 `Step 4-2` 與 `Step 5`，超級簡單。</sup></sub>
+<sub><sup>＊重開機之後，若要在 電腦/平板/手機 Client 遠端操作 DGX Spark Server 的 Ollama 服務，只要執行 `Step 4-2` 與 `Step 5`，超級簡單。</sup></sub>
 
 ---
 
@@ -142,9 +142,9 @@
 
 ---
 
-# **恭喜你！從此你能在 Mac/PC/Tablet/Phone，用 DGX Spark 的 GPU 算力，開網頁跑 Ollama 了！**
+# **恭喜你！從此你能在 電腦/平板/手機，用 DGX Spark 的 GPU 算力，開網頁跑 Ollama 了！**
 <sub><sup>＊重開機之後，若要在 DGX Spark 本機使用 Ollama，只要執行 `Step 5`，超級簡單。</sup></sub>
   
-<sub><sup>＊重開機之後，若要在 Tablet/Phone/MAC/PC Client 遠端操作 DGX Spark Server 的 Ollama 服務，只要執行 `Step 4-2` 與 `Step 5`，超級簡單。</sup></sub>
+<sub><sup>＊重開機之後，若要在 電腦/平板/手機 Client 遠端操作 DGX Spark Server 的 Ollama 服務，只要執行 `Step 4-2` 與 `Step 5`，超級簡單。</sup></sub>
 
 ---
