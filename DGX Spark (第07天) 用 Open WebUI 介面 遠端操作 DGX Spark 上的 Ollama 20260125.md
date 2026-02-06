@@ -10,7 +10,7 @@
 > - **小修改 NVIDIA官方步驟，確保擁有管理者權限能打開 Ollama 更高階應用** 
 >   - 官方步驟是基於 NVIDIA SYNC app 連線的，只修改三個步驟就能匹配 自己建立的遠端連線
 >   - 修改的 `Step 4-1` 指令，能確保這個登入者擁有管理者身份，從而能打開 Ollama 更高階應用，例如在 Ollama 文字對話背景嵌入 ComfyUI 生圖與生影片服務等等。
-> - **既能 DGX Spark 本機使用 Ollama，也能 Tablet/Phone 或 MAC/PC 遠端操作 DGX Spark 的 Ollama 服務**
+> - **既能 DGX Spark 本機使用 Ollama，也能 Mac/PC/Tablet/Phone Client 遠端操作 DGX Spark Server 的 Ollama 服務**
 >   - 重開機之後，在 DGX Spark 本機使用 Ollama，只要執行 `Step 5`，超級簡單
 >   - 重開機之後，在 Mac/PC/Tablet/Phone Client 遠端操作 DGX Spark Server 的 Ollama 服務，只要執行 `Step 4-2` 與 `Step 5`，超級簡單
 
