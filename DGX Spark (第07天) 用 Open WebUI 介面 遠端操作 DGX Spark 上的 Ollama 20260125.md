@@ -143,7 +143,9 @@
 
 ---
 
-# **恭喜你！從此你能在 Mac/PC，用 DGX Spark 的 GPU 算力，開網頁跑 Ollama 了！**
-<sub><sup>＊重開機之後，只要 Mac/PC (Client) 執行 `Step 4-3` 與 `Step 5`，超級簡單。</sup></sub>
+# **恭喜你！從此你能在 Mac/PC/Tablet/Phone，用 DGX Spark 的 GPU 算力，開網頁跑 Ollama 了！**
+<sub><sup>＊重開機之後，在 DGX Spark 本機使用 Ollama，只要執行 `Step 5`，超級簡單。</sup></sub>
+
+<sub><sup>＊重開機之後，在 Tablet/Phone 或 MAC/PC 遠端操作 DGX Spark 的 Ollama 服務，只要執行 `Step 4-2` 與 `Step 5`，超級簡單。</sup></sub>
 
 ---
