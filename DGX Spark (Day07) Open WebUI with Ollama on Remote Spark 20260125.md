@@ -60,9 +60,9 @@ On this page,
     - **ghcr.io/open-webui/open-webui:ollama** Use the Docker image ghcr.io/open-webui/open-webui:ollama to create the container.
 
 - On DGX Spark terminal, run command:
-```
-exit
-```
+  ```
+  exit
+  ```
 
 ### Modified Step 4-2. On Mac/PC Client, log out from the temporary DGX Spark Server session established in Step 3 (no Open WebUI communication port in Client site was specified yet)
 On Mac/PC Client, continue on the Terminal app, run the following command:
