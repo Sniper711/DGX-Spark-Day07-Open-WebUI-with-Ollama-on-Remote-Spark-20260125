@@ -86,8 +86,8 @@ On this page,
   - On DGX Spark browser
     - Use `http://localhost:12000` to connect Ollama locally.
 - If you like to remotely operate DGX Spark Server's Ollama service from Computer/Tablet/Phone Client:
-  - On Computer/Tablet/Phone Client
-    - use `http://100.a.b.c:12000` to connect DGX Spark Server's Ollama service remotely.
+  - On Computer/Tablet/Phone Client browser
+    - use `http://100.a.b.c:12000` to connect DGX Spark Server's Ollama service from Computer/Tablet/Phone Client remotely.
     - `100.a.b.c` is the DGX Spark Server's Tailscale IP on `Step 4-2`.
 
   <sub><sup>＊After rebooting, to use Ollama locally on DGX Spark, just run `Step 5` - it's super easy.</sup></sub>
