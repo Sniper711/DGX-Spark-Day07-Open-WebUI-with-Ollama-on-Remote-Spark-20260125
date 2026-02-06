@@ -117,10 +117,22 @@ On this page,
 
 ## Step 9. Stop the Open WebUI
 (Don't do it - follow the modified step below instead)
-## Modified Step 9. Stop the Open WebUI
-In the terminal window where you ran Step 4-3 (the SSH tunnel command), press `Ctrl+C` to exit.
+## Modified Step 9. Stop and Restart the Open WebUI
+### Modified Step 9-1. Stop the Open WebUI
+- On DGX Spark Server terminal, Stop Open WebUI
 
-*This will terminate the SSH tunnel, stopping the local port forwarding and closing access to the Open WebUI port on the DGX Spark server.
+  Because `step 4-1` has already been designed with `--restart unless-stopped` for automatic startup on every boot, therefore the stop command is:
+  ```
+  docker stop open-webui
+  ```
+
+### Modified Step 9-2. Restart the Open WebUI
+- On DGX Spark Server terminal, Restart Open WebUI
+
+  Because `step 4-1` has already been designed with `--restart unless-stopped` for automatic startup on every boot, therefore the restart command will restore the automatic startup on every boot:
+  ```
+  docker start open-webui
+  ```
 
 ---
 
