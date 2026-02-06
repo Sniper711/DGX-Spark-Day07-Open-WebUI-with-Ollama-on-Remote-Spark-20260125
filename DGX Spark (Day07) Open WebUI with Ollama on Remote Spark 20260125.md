@@ -70,7 +70,7 @@ On this page,
   - No extra step needs.
 - On MAC/PC/Tablet/Phone Client, if you want to **remotely** operate DGX Spark Server's Ollama service from Mac/PC/Tablet/Phone Client:
   - MAC/PC/Tablet/Phone Client launches Tailscale VPN, to be in the same virtual intranet IP 100.x.x.x environment as DGX Spark Server.
-  - **Find out the DGX Spark Server Tailscale IP 100.a.b.c**
+  - **Find out the DGX Spark Server Tailscale IP `100.a.b.c`**
 
   <sub><sup>＊After rebooting, to use Ollama **locally** on DGX Spark, just run `Step 5` - it's super easy.</sup></sub>
 
