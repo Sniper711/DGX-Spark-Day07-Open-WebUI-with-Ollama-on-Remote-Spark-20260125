@@ -3,7 +3,7 @@
 # DGX Spark (第07天) 用 Open WebUI 介面 遠端操作 DGX Spark 上的 Ollama 20260125
 ## 🟩 中文版
 > ## 適用情境 與 優點
-> **Mac/PC Client 開瀏覽器在 Open WebUI 介面上 → 透過自己建立的遠端連線 → 用 DGX Spark Server 的算力跑 Ollama**
+> **Mac/PC/Tablet/Phone Client 開瀏覽器在 Open WebUI 介面上 → 透過自己建立的遠端連線 → 用 DGX Spark Server 的算力跑 Ollama**
 > - **基於前面文章 [第05天: 遠端操作 - 學會用 Tailscale 輕鬆取代 WireGuard+Termius](https://github.com/Sniper711/DGX-Spark-Day05-REMOTE-ACCESS-Mastering-Tailscale-to-Easily-Replace-WireGuide-and-Termius-20260116/blob/main/DGX%20Spark%20(%E7%AC%AC05%E5%A4%A9)%20%E9%81%A0%E7%AB%AF%E6%93%8D%E4%BD%9C%20-%20%E5%AD%B8%E6%9C%83%E7%94%A8%20Tailscale%20%E8%BC%95%E9%AC%86%E5%8F%96%E4%BB%A3%20WireGuard%2BTermius%2020260116.md) 建立 Server/Client 的連線方式**
 >   - **100% 連線成功率與穩定度，自己掌握 Server/Client 連線的設定細節**
 >   - 不使用 NVIDIA SYNC app 的連線方式
@@ -12,7 +12,7 @@
 >   - 修改的 `Step 4-1` 指令，能確保這個登入者擁有管理者身份，從而能打開 Ollama 更高階應用，例如在 Ollama 文字對話背景嵌入 ComfyUI 生圖與生影片服務等等。
 > - **既能 DGX Spark 本機使用 Ollama，也能 Tablet/Phone 或 MAC/PC 遠端操作 DGX Spark 的 Ollama 服務**
 >   - 重開機之後，在 DGX Spark 本機使用 Ollama，只要執行 `Step 5`，超級簡單
->   - 重開機之後，在 Tablet/Phone 或 MAC/PC 遠端操作 DGX Spark 的 Ollama 服務，只要執行 `Step 4-2` 與 `Step 5`，超級簡單
+>   - 重開機之後，在 Mac/PC/Tablet/Phone Client 遠端操作 DGX Spark Server 的 Ollama 服務，只要執行 `Step 4-2` 與 `Step 5`，超級簡單
 
 ---
 
@@ -48,7 +48,7 @@
     - **docker** 用 docker 指令
     - **run -d** 跑 containner 但別在terminal上顯示
     - **--gpus all** 用 NVIDIA DGX Spark 的 GPU 高速運算
-    - **-e WEBUI_ADMIN_EMAIL=<admin_email_address>** 把整個<admin_email_address>包括括弧，替換成 將來Ollama登入 用的 email address，以確保這個登入者擁有管理者身份，從而能打開 Ollama 更高階應用，例如在 Ollama 文字對話背景嵌入 ComfyUI 生圖與生影片服務等等。
+    - **-e WEBUI_ADMIN_EMAIL=<admin_email_address>** 把整個<admin_email_address>包括括弧，替換成 **將來Ollama登入 用的 email address，以確保這個登入者擁有管理者身份**，從而能打開 Ollama 更高階應用，例如在 Ollama 文字對話背景嵌入 ComfyUI 生圖與生影片服務等等。
     - **-p 3000:8080** 把實體 DGX Spark 的 3000 port 對應到 虛擬容器 container 的 8080 port (*註：DGX Spark 的 3000 port 這數字可以修改)
     - **-v ollama:/root/.ollama** 把實體 DGX Spark 的 ollama 目錄 掛載到 虛擬容器 container 的 /root/.ollama 目錄 (*註：實體 DGX Spark 目錄通常在 /var/lib/docker/volumes/...之下)
     - **-v open-webui:/app/backend/data** 把實體 DGX Spark 的 open-webui 目錄 掛載到 虛擬容器 container 的 /app/backend/data 目錄 (*註：實體 DGX Spark 目錄通常在 /var/lib/docker/volumes/...之下)
@@ -85,7 +85,7 @@
 ---
 
 ## Step 6. 創建管理員帳戶
-(步驟不變)(但是創建帳戶的email必須與步驟4-1指令內的email address相同，才能擁有admin權限)(這很重要，尤其將來做Ollama文字對話框內直接呼叫ComfyUI生圖的進階做法時需要)
+(步驟不變)(但是**創建帳戶的email必須與步驟 `Step 4-1` 指令內的email address相同，才能擁有admin權限**)(這很重要，尤其將來做Ollama文字對話框內直接呼叫ComfyUI生圖的進階做法時需要)
 
 ---
 
@@ -105,10 +105,19 @@
 
 ## Step 9. 停止 Open WebUI
 (不要做)(改成以下步驟)
-## 改為 Step 9. 停止 Open WebUI
-在 Step 4-3 的終端機機畫面按 `Ctrl+C` 退出
+## 改為 Step 9-1. 停止 Open WebUI
+在 DGX Spark Server 的終端機上，停止 Open WebUI
+因為 `step 4-1` 已經設計 `--restart unless-stopped` 每次開機自動啟動，所以停止的指令是：
+```
+docker stop open-webui
+```
 
-*這將終止 SSH 隧道，停止本地埠轉發，並關閉對 DGX Spark 伺服器上 Open WebUI 埠的存取。
+## 改為 Step 9-2. 再次啟動 Open WebUI
+在 DGX Spark Server 的終端機上，啟動 Open WebUI：
+因為 `step 4-1` 已經設計 `--restart unless-stopped` 每次開機自動啟動，所以啟動的指令會恢復每次開機自動啟動：
+```
+docker start open-webui
+```
 
 --
 
