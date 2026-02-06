@@ -94,7 +94,7 @@
 ---
 
 ## Step 6. 創建管理員帳戶
-(步驟不變)(但是**創建帳戶的email必須與步驟 `Step 4-1` 指令內的email address相同，才能擁有admin權限**)(這很重要，尤其將來做Ollama文字對話框內直接呼叫ComfyUI生圖的進階做法時需要)
+(步驟不變)(但是**創建帳戶的 email 必須與步驟 `Step 4-1` 指令內的 email address 相同，才能擁有 admin 權限**)(這很重要，尤其將來做 Ollama 文字對話框內直接呼叫 ComfyUI 生圖的進階做法時需要)
 
 ---
 
