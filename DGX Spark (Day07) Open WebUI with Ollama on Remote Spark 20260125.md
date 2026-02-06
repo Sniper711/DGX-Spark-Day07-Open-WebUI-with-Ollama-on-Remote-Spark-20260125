@@ -68,7 +68,7 @@ On this page,
 **Important⚠️：Prior to `Step 4-2`, please finish the setup of article [DGX Spark (Day05) REMOTE ACCESS - Mastering Tailscale to Easily Replace WireGuard+Termius 20260116 🟩 English](https://github.com/Sniper711/DGX-Spark-Day05-REMOTE-ACCESS-Mastering-Tailscale-to-Easily-Replace-WireGuide-and-Termius-20260116/blob/main/DGX%20Spark%20(Day05)%20REMOTE%20ACCESS%20-%20Mastering%20Tailscale%20to%20Easily%20Replace%20WireGuide%2BTermius%2020260116.md)**
 - If you like to use Ollama locally on DGX Spark:
   - On DGX Spark Server
-    - No extra step needs
+    - No extra steps are needed
 - If you like to remotely operate DGX Spark Server's Ollama service from Computer/Tablet/Phone Client:
   - On Computer/Tablet/Phone Client
     - Launches Tailscale VPN, to be in the same virtual intranet IP 100.x.x.x environment as DGX Spark Server.
