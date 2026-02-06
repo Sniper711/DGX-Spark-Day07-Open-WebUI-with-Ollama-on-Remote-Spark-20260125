@@ -67,8 +67,10 @@
   - 不需要額外設定。
 - 在 MAC/PC/Tablet/Phone Client 上，若你要在 MAC/PC/Tablet/Phone Client 遠端操作 DGX Spark Server 的 Olllama 服務：
   - 啟動 Tailscale APP，讓 MAC/PC/Tablet/Phone Client 進入與 DGX Spark Server 相同的 Tailscale VPN 虛擬內網 IP 100.x.x.x 環境。
-  - **紀錄 「DGX Spark 在 Tailscale VPN 虛擬內網的 IP 位置」 100.a.b.c** 
+  - **紀錄 「DGX Spark 在 Tailscale VPN 虛擬內網的 IP 位置」 `100.a.b.c`** 
+
   <sub><sup>＊重開機之後，若要在 DGX Spark 本機使用 Ollama，只要執行 `Step 5`，超級簡單。</sup></sub>
+  
   <sub><sup>＊重開機之後，若要在 Tablet/Phone/MAC/PC Client 遠端操作 DGX Spark Server 的 Ollama 服務，只要執行 `Step 4-2` 與 `Step 5`，超級簡單。</sup></sub>
 ---
 
@@ -79,7 +81,9 @@
 - 在 MAC/PC/Tablet/Phone Client 上，若你要在 MAC/PC/Tablet/Phone Client 遠端操作 DGX Spark Server 的 Olllama 服務：
   - 在 MAC/PC/Tablet/Phone Client 用 `http://100.a.b.c:12000` 網址，遠端連上 DGX Spark 的 Ollama 服務。
   - 其中，`100.a.b.c` 是在步驟 `Step 4-2` 紀錄的 「DGX Spark 在 Tailscale VPN 虛擬內網的 IP 位置」
+
     <sub><sup>＊重開機之後，在 DGX Spark 本機使用 Ollama，只要執行 `Step 5`，超級簡單。</sup></sub>
+
     <sub><sup>＊重開機之後，在 Tablet/Phone 或 MAC/PC 遠端操作 DGX Spark 的 Ollama 服務，只要執行 `Step 4-2` 與 `Step 5`，超級簡單。</sup></sub>
 
 ---
