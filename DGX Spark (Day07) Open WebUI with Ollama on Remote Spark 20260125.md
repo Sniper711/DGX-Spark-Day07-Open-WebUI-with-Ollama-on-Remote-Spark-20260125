@@ -10,8 +10,8 @@
 >   - The official steps are built around NVIDIA SYNC connections; only three steps need to be changed to match the self-established remote connections.
 >   - The modified command in `step 4-1` ensures that the logged-in user has administrator privileges, thereby allowing access to advanced Ollama applications, such as embedding ComfyUI image generation and video generation services in the background of Ollama text conversations, and more.
 > - Can use Ollama **locally** on DGX Spark, and also **remotelly** operate DGX Spark Server's Ollama service from MAC/PC/Tablet/Phone Client.
->   - After rebooting, to use Ollama locally on DGX Spark, just run `Step 5` - it's super easy.
->   - After rebooting, to remotely operate DGX Spark Server's Ollama service from Mac/PC/Tablet/Phone Client, just run `Step 4-2` and `Step 5` — it's super easy.
+>   - After rebooting, to use Ollama **locally** on DGX Spark, just run `Step 5` - it's super easy.
+>   - After rebooting, to **remotely** operate DGX Spark Server's Ollama service from Mac/PC/Tablet/Phone Client, just run `Step 4-2` and `Step 5` — it's super easy.
 
 
 ---
