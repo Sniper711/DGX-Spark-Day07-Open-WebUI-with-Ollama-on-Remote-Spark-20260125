@@ -146,7 +146,9 @@ On this page,
 
 ---
 
-# Congratulations - Now you can run Ollama via your Mac/PC browser — powered by DGX Spark's GPU!
-<sub><sup>* After rebooting, simply have the Mac/PC Client run `Step 4-3` and `Step 5` - it's super easy.</sup></sub>
+# Congratulations - Now you can run Ollama via your Mac/PC/Tablet/Phone browser — powered by DGX Spark's GPU!
+  <sub><sup>＊After rebooting, to use Ollama locally on DGX Spark, just run `Step 5` - it's super easy.</sup></sub>
+
+  <sub><sup>＊After rebooting, to remotely operate DGX Spark Server's Ollama service from Mac/PC/Tablet/Phone Client, just run `Step 4-2` and `Step 5` — it's super easy.</sup></sub>
 
 ---
