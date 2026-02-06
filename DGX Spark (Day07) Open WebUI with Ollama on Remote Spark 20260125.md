@@ -82,15 +82,17 @@ On this page,
 
 ## Step 5. Launch Open WebUI
 (Don't do it - follow the modified step below instead)
-- On DGX Spark Server, if you want to use Ollama **locally** on DGX Spark:
-  - On DGX Spark browser, use `http://localhost:12000` to connect Ollama **locally**.
-- On MAC/PC/Tablet/Phone Client, if you want to **remotely** operate DGX Spark Server's Ollama service:
-  - On MAC/PC/Tablet/Phone Client browser, use `http://100.a.b.c:12000` to connect DGX Spark Server's Ollama service **remotely**.
-  - `100.a.b.c` is the DGX Spark Server's Tailscale IP on `Step 4-2`.
+- If you like to use Ollama locally on DGX Spark:
+  - On DGX Spark browser
+    - Use `http://localhost:12000` to connect Ollama locally.
+- If you want to remotely operate DGX Spark Server's Ollama service:
+  - On MAC/PC/Tablet/Phone Client
+    - use `http://100.a.b.c:12000` to connect DGX Spark Server's Ollama service remotely.
+    - `100.a.b.c` is the DGX Spark Server's Tailscale IP on `Step 4-2`.
 
-  <sub><sup>＊After rebooting, to use Ollama **locally** on DGX Spark, just run `Step 5` - it's super easy.</sup></sub>
+  <sub><sup>＊After rebooting, to use Ollama locally on DGX Spark, just run `Step 5` - it's super easy.</sup></sub>
 
-  <sub><sup>＊After rebooting, to **remotely** operate DGX Spark Server's Ollama service from Mac/PC/Tablet/Phone Client, just run `Step 4-2` and `Step 5` — it's super easy.</sup></sub>
+  <sub><sup>＊After rebooting, to remotely operate DGX Spark Server's Ollama service from Mac/PC/Tablet/Phone Client, just run `Step 4-2` and `Step 5` — it's super easy.</sup></sub>
 
 ---
 
