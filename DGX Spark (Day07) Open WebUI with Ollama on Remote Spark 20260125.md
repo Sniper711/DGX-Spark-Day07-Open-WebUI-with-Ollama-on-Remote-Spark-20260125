@@ -33,31 +33,36 @@ On this page,
 (Don't do it - follow the modified step below instead)
 ## Modified Step 4. Add Open WebUI custom port configuration 
 ### Modified Step 4-1. Add Open WebUI custom port configuration
-On Mac/PC Client, continue on the Terminal app, run the following command:
-```
-docker run -d \
-  --gpus all \
-  -p 3000:8080 \
-  -e WEBUI_ADMIN_EMAIL=<admin_email_address> \ # Note: Replace the entire <admin_email_address> (including the angle brackets) with the email address you will use to log in to Ollama, to ensure that this login has administrator privileges.
-  -v ollama:/root/.ollama \
-  -v open-webui:/app/backend/data \
-  --name open-webui \
-  --restart unless-stopped \
-  ghcr.io/open-webui/open-webui:ollama
-```
-- Command explainations
-  - **docker** Docker command
-  - **run -d** Run the container in detached mode (in the background, without showing logs in the terminal).
-  - **--gpus all** Grant the container access to all NVIDIA GPUs on the DGX Spark host.
-  - **-p 3000:8080** Publish (map) port 8080 inside the container to port 3000 on the DGX Spark host.
-(*Note: The 3000 port on DGX Spark can be changed.)
-  - **-e WEBUI_ADMIN_EMAIL=<admin_email_address>** Replace the entire <admin_email_address> (including the angle brackets) with the email address you will use to log in to Ollama, to ensure that this login has administrator privileges, thereby enabling access to advanced Ollama applications, such as embedding ComfyUI image generation and video generation services in the background of Ollama text conversations, and more.
-  - **-v ollama:/root/.ollama** Mount the Docker named volume `ollama` stored on the DGX Spark host (typically under /var/lib/docker/volumes/ollama/_data) to `/root/.ollama` inside the container.
-  - **-v open-webui:/app/backend/data** Mount the Docker named volume `open-webui` stored on the DGX Spark host (typically under /var/lib/docker/volumes/open-webui/_data) to `/app/backend/data` inside the container.
-  - **--name open-webui** Name the container open-webui.
-  - **--restart unless-stopped** Automatically restart the container on system boot (or after crashes), unless it was explicitly stopped with docker stop.
+- On DGX Spark terminal, run command:
+  ```
+  docker run -d \
+    --gpus all \
+    -p 3000:8080 \
+    # Note: Replace the entire <admin_email_address> (including the angle brackets) hereunder, with the email address you will use to log in to Ollama, to ensure that this login has administrator privileges.
+    -e WEBUI_ADMIN_EMAIL=<admin_email_address> \ 
+    -v ollama:/root/.ollama \
+    -v open-webui:/app/backend/data \
+    --name open-webui \
+    --restart unless-stopped \
+    ghcr.io/open-webui/open-webui:ollama
+  ```
+  - Command explainations
+    - **docker** Docker command
+    - **run -d** Run the container in detached mode (in the background, without showing logs in the terminal).
+    - **--gpus all** Grant the container access to all NVIDIA GPUs on the DGX Spark host.
+    - **-p 3000:8080** Publish (map) port 8080 inside the container to port 3000 on the DGX Spark host. (* Note: The 3000 port on DGX Spark can be changed.)
+    - **-e WEBUI_ADMIN_EMAIL=<admin_email_address>** Replace the entire <admin_email_address> (including the angle brackets) **with the email address you will use to log in to Ollama, to ensure that this login has administrator privileges**, thereby enabling access to advanced Ollama applications, such as embedding ComfyUI image generation and video generation services in the background of Ollama text conversations, and more.
+    - **-v ollama:/root/.ollama** Mount the Docker named volume `ollama` stored on the DGX Spark host (typically under /var/lib/docker/volumes/ollama/_data) to `/root/.ollama` inside the container.
+    - **-v open-webui:/app/backend/data** Mount the Docker named volume `open-webui` stored on the DGX Spark host (typically under /var/lib/docker/volumes/open-webui/_data) to `/app/backend/data` inside the container.
+    - **--name open-webui** Name the container open-webui.
+    - **--restart unless-stopped** Automatically restart the container on system boot (or after crashes), unless it was explicitly stopped with docker stop.
 (*Note: Can be changed to --restart always to always restart regardless of how it was stopped.)
-  - **ghcr.io/open-webui/open-webui:ollama** Use the Docker image ghcr.io/open-webui/open-webui:ollama to create the container.
+    - **ghcr.io/open-webui/open-webui:ollama** Use the Docker image ghcr.io/open-webui/open-webui:ollama to create the container.
+
+- On DGX Spark terminal, run command:
+```
+exit
+```
 
 ### Modified Step 4-2. On Mac/PC Client, log out from the temporary DGX Spark Server session established in Step 3 (no Open WebUI communication port in Client site was specified yet)
 On Mac/PC Client, continue on the Terminal app, run the following command:
