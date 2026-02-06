@@ -2,16 +2,16 @@
 # DGX Spark (Day07) Open WebUI with Ollama on Remote Spark 20260125
 ## 🟩 English
 > ## Scenarios & Advantages
-> **Mac/PC/Tablet/Phone Client browser uses the Open WebUI interface → through the self-established remote connections → to run Ollama on DGX Spark Server**
+> **Computer/Tablet/Phone Client browser uses the Open WebUI interface → through the self-established remote connections → to run Ollama on DGX Spark Server**
 > - **Based on the interconnection methods of DGX Spark: [Day05: REMOTE ACCESS - Mastering Tailscale to Easily Replace WireGuide+Termius](https://github.com/Sniper711/DGX-Spark-Day05-REMOTE-ACCESS-Mastering-Tailscale-to-Easily-Replace-WireGuide-and-Termius-20260116/blob/main/DGX%20Spark%20(Day05)%20REMOTE%20ACCESS%20-%20Mastering%20Tailscale%20to%20Easily%20Replace%20WireGuide%2BTermius%2020260116.md)**. 
 >   - Guaranteed stability through the self-estabilished remote connections
 >   - No reliance on NVIDIA SYNC
 > - **Minor modifications to the NVIDIA official steps. Ensure Administrator Privileges for Enabling Advanced Ollama Applications** 
 >   - The official steps are built around NVIDIA SYNC connections; only three steps need to be changed to match the self-established remote connections.
 >   - The modified command in `step 4-1` ensures that the logged-in user has administrator privileges, thereby allowing access to advanced Ollama applications, such as embedding ComfyUI image generation and video generation services in the background of Ollama text conversations, and more.
-> - Can use Ollama **locally** on DGX Spark, and also **remotelly** operate DGX Spark Server's Ollama service from MAC/PC/Tablet/Phone Client.
+> - Can use Ollama **locally** on DGX Spark, and also **remotelly** operate DGX Spark Server's Ollama service from Computer/Tablet/Phone Client.
 >   - After rebooting, to use Ollama **locally** on DGX Spark, just run `Step 5` - it's super easy.
->   - After rebooting, to **remotely** operate DGX Spark Server's Ollama service from Mac/PC/Tablet/Phone Client, just run `Step 4-2` and `Step 5` — it's super easy.
+>   - After rebooting, to **remotely** operate DGX Spark Server's Ollama service from Computer/Tablet/Phone Client, just run `Step 4-2` and `Step 5` — it's super easy.
 
 
 ---
@@ -64,19 +64,19 @@ On this page,
   exit
   ```
 
-### Modified Step 4-2. MAC/PC/Tablet/Phone Client launches Tailscale VPN, to be in the same virtual intranet IP 100.x.x.x environment as DGX Spark.
+### Modified Step 4-2. Computer/Tablet/Phone Client launches Tailscale VPN, to be in the same virtual intranet IP 100.x.x.x environment as DGX Spark.
 **Important⚠️：Prior to `Step 4-2`, please finish the setup of article [DGX Spark (Day05) REMOTE ACCESS - Mastering Tailscale to Easily Replace WireGuard+Termius 20260116 🟩 English](https://github.com/Sniper711/DGX-Spark-Day05-REMOTE-ACCESS-Mastering-Tailscale-to-Easily-Replace-WireGuide-and-Termius-20260116/blob/main/DGX%20Spark%20(Day05)%20REMOTE%20ACCESS%20-%20Mastering%20Tailscale%20to%20Easily%20Replace%20WireGuide%2BTermius%2020260116.md)**
 - If you like to use Ollama locally on DGX Spark:
   - On DGX Spark Server
     - No extra step needs
-- If you like to remotely operate DGX Spark Server's Ollama service from Mac/PC/Tablet/Phone Client:
-  - On MAC/PC/Tablet/Phone Client
+- If you like to remotely operate DGX Spark Server's Ollama service from Computer/Tablet/Phone Client:
+  - On Computer/Tablet/Phone Client
     - Launches Tailscale VPN, to be in the same virtual intranet IP 100.x.x.x environment as DGX Spark Server.
     - **Find out the DGX Spark Server Tailscale IP `100.a.b.c`**
 
   <sub><sup>＊After rebooting, to use Ollama locally on DGX Spark, just run `Step 5` - it's super easy.</sup></sub>
 
-  <sub><sup>＊After rebooting, to remotely operate DGX Spark Server's Ollama service from Mac/PC/Tablet/Phone Client, just run `Step 4-2` and `Step 5` — it's super easy.</sup></sub>
+  <sub><sup>＊After rebooting, to remotely operate DGX Spark Server's Ollama service from Computer/Tablet/Phone Client, just run `Step 4-2` and `Step 5` — it's super easy.</sup></sub>
 
 ---
 
@@ -86,13 +86,13 @@ On this page,
   - On DGX Spark browser
     - Use `http://localhost:12000` to connect Ollama locally.
 - If you want to remotely operate DGX Spark Server's Ollama service:
-  - On MAC/PC/Tablet/Phone Client
+  - On Computer/Tablet/Phone Client
     - use `http://100.a.b.c:12000` to connect DGX Spark Server's Ollama service remotely.
     - `100.a.b.c` is the DGX Spark Server's Tailscale IP on `Step 4-2`.
 
   <sub><sup>＊After rebooting, to use Ollama locally on DGX Spark, just run `Step 5` - it's super easy.</sup></sub>
 
-  <sub><sup>＊After rebooting, to remotely operate DGX Spark Server's Ollama service from Mac/PC/Tablet/Phone Client, just run `Step 4-2` and `Step 5` — it's super easy.</sup></sub>
+  <sub><sup>＊After rebooting, to remotely operate DGX Spark Server's Ollama service from Computer/Tablet/Phone Client, just run `Step 4-2` and `Step 5` — it's super easy.</sup></sub>
 
 ---
 
@@ -142,13 +142,13 @@ On this page,
 ---
 
 ## Step 11. Cleanup and rollback
-(no change) **Caution: DO NOT casually cleanup and rollback**, and the following commands should be run directly on the DGX Spark Server (not on your Mac/PC client).
+(no change) **Caution: DO NOT casually cleanup and rollback**, and the following commands should be run directly on the DGX Spark Server (not on your Computer/Tablet/Phone client).
 
 ---
 
-# Congratulations - Now you can run Ollama via your Mac/PC/Tablet/Phone browser — powered by DGX Spark's GPU!
+# Congratulations - Now you can run Ollama via your Computer/Tablet/Phone browser — powered by DGX Spark's GPU!
   <sub><sup>＊After rebooting, to use Ollama locally on DGX Spark, just run `Step 5` - it's super easy.</sup></sub>
 
-  <sub><sup>＊After rebooting, to remotely operate DGX Spark Server's Ollama service from Mac/PC/Tablet/Phone Client, just run `Step 4-2` and `Step 5` — it's super easy.</sup></sub>
+  <sub><sup>＊After rebooting, to remotely operate DGX Spark Server's Ollama service from Computer/Tablet/Phone Client, just run `Step 4-2` and `Step 5` — it's super easy.</sup></sub>
 
 ---
