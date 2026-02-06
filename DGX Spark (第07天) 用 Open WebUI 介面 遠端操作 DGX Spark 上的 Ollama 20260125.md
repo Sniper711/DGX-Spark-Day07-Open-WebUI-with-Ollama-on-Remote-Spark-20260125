@@ -114,7 +114,7 @@ docker stop open-webui
 
 ## 改為 Step 9-2. 再次啟動 Open WebUI
 在 DGX Spark Server 的終端機上，啟動 Open WebUI：
-因為 `step 4-1` 已經設計 `--restart unless-stopped` 每次開機自動啟動，所以啟動的指令會恢復每次開機自動啟動：
+因為 `step 4-1` 已經設計 `--restart unless-stopped` 每次開機自動啟動，所以再次啟動的指令會恢復每次開機自動啟動：
 ```
 docker start open-webui
 ```
