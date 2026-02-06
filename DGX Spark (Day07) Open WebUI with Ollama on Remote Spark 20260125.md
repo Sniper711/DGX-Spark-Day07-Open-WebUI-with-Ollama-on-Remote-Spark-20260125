@@ -64,7 +64,13 @@ On this page,
   exit
   ```
 
-### Modified Step 4-2. On Mac/PC Client, log out from the temporary DGX Spark Server session established in Step 3 (no Open WebUI communication port in Client site was specified yet)
+### Modified Step 4-2. MAC/PC/Tablet/Phone Client launches Tailscale VPN, to be in the same virtual intranet IP 100.x.x.x environment as DGX Spark.
+**Important⚠️：Prior to `Step 4-2`, please finish the setup of article [DGX Spark (Day05) REMOTE ACCESS - Mastering Tailscale to Easily Replace WireGuard+Termius 20260116 🟩 English](https://github.com/Sniper711/DGX-Spark-Day05-REMOTE-ACCESS-Mastering-Tailscale-to-Easily-Replace-WireGuide-and-Termius-20260116/blob/main/DGX%20Spark%20(Day05)%20REMOTE%20ACCESS%20-%20Mastering%20Tailscale%20to%20Easily%20Replace%20WireGuide%2BTermius%2020260116.md)**
+
+> - Can use Ollama **locally** on DGX Spark, and also **remotelly** operate DGX Spark Server's Ollama service from MAC/PC/Tablet/Phone Client.
+>   - After rebooting, to use Ollama **locally** on DGX Spark, just run `Step 5` - it's super easy.
+>   - After rebooting, to **remotely** operate DGX Spark Server's Ollama service from Mac/PC/Tablet/Phone Client, just run `Step 4-2` and `Step 5` — it's super easy.
+### On Mac/PC Client, log out from the temporary DGX Spark Server session established in Step 3 (no Open WebUI communication port in Client site was specified yet)
 On Mac/PC Client, continue on the Terminal app, run the following command:
 ###### After executing the command, you will notice the terminal prompt changes — from the DGX Spark Server's format (e.g., <server-user>@Spark-xxxx:$) back to your local Mac/PC Client's prompt (e.g., <local-user>@<local-machine>%). This indicates a successful logout.
 ```
