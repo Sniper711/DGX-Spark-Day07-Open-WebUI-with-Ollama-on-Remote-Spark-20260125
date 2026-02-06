@@ -62,12 +62,12 @@
   ```
 
 ### 改為 Step 4-2. MAC/PC/Tablet/Phone Client 啟動 Tailscale VPN，進入與 DGX Spark 相同的 Tailscale VPN 虛擬內網 IP 100.x.x.x 環境
-**重要⚠️：先確定你已經完成文章 [DGX Spark (第05天) 遠端操作 - 學會用 Tailscale 輕鬆取代 WireGuard+Termius 20260116 🟩 中文版](https://github.com/Sniper711/DGX-Spark-Day05-REMOTE-ACCESS-Mastering-Tailscale-to-Easily-Replace-WireGuide-and-Termius-20260116/blob/main/DGX%20Spark%20(%E7%AC%AC05%E5%A4%A9)%20%E9%81%A0%E7%AB%AF%E6%93%8D%E4%BD%9C%20-%20%E5%AD%B8%E6%9C%83%E7%94%A8%20Tailscale%20%E8%BC%95%E9%AC%86%E5%8F%96%E4%BB%A3%20WireGuard%2BTermius%2020260116.md) 的安裝步驟**
+**重要⚠️：在 `Step 4-2` 開始之前，先確定你已經完成文章 [DGX Spark (第05天) 遠端操作 - 學會用 Tailscale 輕鬆取代 WireGuard+Termius 20260116 🟩 中文版](https://github.com/Sniper711/DGX-Spark-Day05-REMOTE-ACCESS-Mastering-Tailscale-to-Easily-Replace-WireGuide-and-Termius-20260116/blob/main/DGX%20Spark%20(%E7%AC%AC05%E5%A4%A9)%20%E9%81%A0%E7%AB%AF%E6%93%8D%E4%BD%9C%20-%20%E5%AD%B8%E6%9C%83%E7%94%A8%20Tailscale%20%E8%BC%95%E9%AC%86%E5%8F%96%E4%BB%A3%20WireGuard%2BTermius%2020260116.md) 的安裝步驟**
 - 在 DGX Spark Server 上，若你要在 DGX Spark 本機使用 Ollama：
-  - 不需要此步驟。
+  - 不需要額外設定。
 - 在 MAC/PC/Tablet/Phone Client 上，若你要在 MAC/PC/Tablet/Phone Client 遠端操作 DGX Spark Server 的 Olllama 服務：
-  - 啟動 Tailscale APP，讓 MAC/PC/Tablet/Phone Client 進入與 DGX Spark 相同的 Tailscale VPN 虛擬內網 IP 100.x.x.x 環境。
-  - 紀錄 「DGX Spark 在 Tailscale VPN 虛擬內網的 IP 位置」 100.a.b.c 
+  - 啟動 Tailscale APP，讓 MAC/PC/Tablet/Phone Client 進入與 DGX Spark Server 相同的 Tailscale VPN 虛擬內網 IP 100.x.x.x 環境。
+  - **紀錄 「DGX Spark 在 Tailscale VPN 虛擬內網的 IP 位置」 100.a.b.c** 
   <sub><sup>＊重開機之後，若要在 DGX Spark 本機使用 Ollama，只要執行 `Step 5`，超級簡單。</sup></sub>
   <sub><sup>＊重開機之後，若要在 Tablet/Phone/MAC/PC Client 遠端操作 DGX Spark Server 的 Ollama 服務，只要執行 `Step 4-2` 與 `Step 5`，超級簡單。</sup></sub>
 ---
