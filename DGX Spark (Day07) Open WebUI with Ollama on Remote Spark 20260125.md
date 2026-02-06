@@ -19,23 +19,13 @@
 ## Based on NVIDIA DGX Spark Official Steps of [Open WebUI with Ollama : Set up WebUI on Remote Spark with NVIDIA Sync](https://build.nvidia.com/spark/open-webui/sync)
 On this page,
 ## Step 1. Configure Docker permissions
-(no change)
-
 ## Step 2. Verify Docker setup and pull container
-(no change)
+(no change for Step 1~2)
 
 ---
 
 ## Step 3. Open NVIDIA SYNC Settings
-(Don't do it - follow the modified step below instead)
-## Modified Step 3. On Mac/PC Client, temporarily login to DGX Spark Server (The port number for Open WebUI has not been assigned yet)
-On Mac/PC Client, open the Terminal app, run the following command:
-###### After executing the following command, you will notice the terminal prompt changes — from your <client_user>@<client_Mac/PC_name>% on the Mac/PC Client to <server_user>@Spark-xxxx:$ on the DGX Spark Server. This indicates a successful login.
-```
-# Remove `<DGX Spark username>`, and replace it with the username used to log in after DGX Spark boots
-# Remove `<192.168.x.x>`, and replace it with DGX Spark intranet IP address (192.168.x.x)
-ssh <DGX Spark username>@<192.168.x.x>
-```
+(Don't do it)
 
 ---
 
