@@ -66,16 +66,17 @@ On this page,
 
 ### Modified Step 4-2. MAC/PC/Tablet/Phone Client launches Tailscale VPN, to be in the same virtual intranet IP 100.x.x.x environment as DGX Spark.
 **Important⚠️：Prior to `Step 4-2`, please finish the setup of article [DGX Spark (Day05) REMOTE ACCESS - Mastering Tailscale to Easily Replace WireGuard+Termius 20260116 🟩 English](https://github.com/Sniper711/DGX-Spark-Day05-REMOTE-ACCESS-Mastering-Tailscale-to-Easily-Replace-WireGuide-and-Termius-20260116/blob/main/DGX%20Spark%20(Day05)%20REMOTE%20ACCESS%20-%20Mastering%20Tailscale%20to%20Easily%20Replace%20WireGuide%2BTermius%2020260116.md)**
-- On DGX Spark Server, if you want to use Ollama **locally** on DGX Spark:
-  - No extra step needs.
-- On MAC/PC/Tablet/Phone Client, if you want to **remotely** operate DGX Spark Server's Ollama service from Mac/PC/Tablet/Phone Client:
-  - MAC/PC/Tablet/Phone Client launches Tailscale VPN, to be in the same virtual intranet IP 100.x.x.x environment as DGX Spark Server.
-  - **Find out the DGX Spark Server Tailscale IP `100.a.b.c`**
+- If you like to use Ollama locally on DGX Spark:
+  - On DGX Spark Server
+    - No extra step needs
+- If you like to remotely operate DGX Spark Server's Ollama service from Mac/PC/Tablet/Phone Client:
+  - On MAC/PC/Tablet/Phone Client
+    - Launches Tailscale VPN, to be in the same virtual intranet IP 100.x.x.x environment as DGX Spark Server.
+    - **Find out the DGX Spark Server Tailscale IP `100.a.b.c`**
 
-  <sub><sup>＊After rebooting, to use Ollama **locally** on DGX Spark, just run `Step 5` - it's super easy.</sup></sub>
+  <sub><sup>＊After rebooting, to use Ollama locally on DGX Spark, just run `Step 5` - it's super easy.</sup></sub>
 
-  <sub><sup>＊After rebooting, to **remotely** operate DGX Spark Server's Ollama service from Mac/PC/Tablet/Phone Client, just run `Step 4-2` and `Step 5` — it's super easy.</sup></sub>
-  
+  <sub><sup>＊After rebooting, to remotely operate DGX Spark Server's Ollama service from Mac/PC/Tablet/Phone Client, just run `Step 4-2` and `Step 5` — it's super easy.</sup></sub>
 
 ---
 
