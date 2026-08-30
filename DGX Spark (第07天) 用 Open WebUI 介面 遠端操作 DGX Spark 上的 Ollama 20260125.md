@@ -19,10 +19,9 @@
 ## 打開 NVIDIA DGX Spark 網頁 [Open WebUI with Ollama : Set up WebUI on Remote Spark with NVIDIA Sync](https://build.nvidia.com/spark/open-webui/sync)
 網頁中
 ## Step 1. 配置 Docker 權限
-## Step 2. 驗證 Docker 設定，並拉取容器
-(步驟1~2不變)(以上均在 DGX Spark 上執行)
-## Step 3. 打開 NVIDIA SYNC 軟體的設定畫面
-(不要做)
+## Step 2. 驗證 Docker 設定
+## Step 3. 下載 Open WubUI container image
+(步驟1~3不變)(以上均在 DGX Spark 上執行)
 
 ## Step 4. 新增 Open WebUI 自訂埠配置
 (不要做)(改成以下步驟)
