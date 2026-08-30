@@ -20,12 +20,8 @@
 On this page,
 ## Step 1. Configure Docker permissions
 ## Step 2. Verify Docker setup and pull container
-(no change for Step 1~2)
-
----
-
-## Step 3. Open NVIDIA SYNC Settings
-(Don't do it)
+## Step 3. Pull Open WebUI container image
+(no change for Step 1~3)
 
 ---
 
