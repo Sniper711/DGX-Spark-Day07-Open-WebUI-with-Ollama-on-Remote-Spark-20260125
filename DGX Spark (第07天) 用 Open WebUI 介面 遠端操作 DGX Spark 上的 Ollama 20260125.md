@@ -81,10 +81,10 @@
 (不要做)(改成以下步驟)
 - 若你要在 DGX Spark 本機使用 Ollama：
   - 在 DGX Spark Server 上
-    - 用 `http://localhost:12000` 網址，本機連上 Ollama.
+    - 用 `http://localhost:3000` 網址，本機連上 Ollama.
 - 若你要在 電腦/平板/手機 Client 遠端操作 DGX Spark Server 的 Olllama 服務：
   - 在 電腦/平板/手機 Client 上
-    - 用 `http://100.a.b.c:12000` 網址，遠端連上 DGX Spark 的 Ollama 服務。
+    - 用 `http://100.a.b.c:3000` 網址，遠端連上 DGX Spark 的 Ollama 服務。
     - 其中，`100.a.b.c` 是在步驟 `Step 4-2` 紀錄的 「DGX Spark 在 Tailscale VPN 虛擬內網的 IP 位置」
 
 <sub><sup>＊重開機之後，若要在 DGX Spark 本機使用 Ollama，只要執行 `Step 5`，超級簡單。</sup></sub>
