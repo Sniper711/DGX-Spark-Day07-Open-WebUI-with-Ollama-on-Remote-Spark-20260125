@@ -97,14 +97,18 @@
 
 ---
 
-## (選項一) 新增模型方法一：NVIDIA官網方法 (僅適用在 Ollama.com 網頁有被搜索列出的模型)
-- 已開啟的 Open WebUI Olloma 網頁服務保持打開，不要關閉 Ollama
-### Step 6-Basic. 下載並配置模型
-### Step 7-Basic. 測試模型
+## (新增模型方法一)：NVIDIA官網方法 (僅適用在 Ollama.com 網頁有被搜索列出的模型)
+- 已開啟的 Open WebUI Olloma 網頁服務保持打開，新增模型時請不要關閉 Ollama.
+### Step 6-基本. 下載並配置模型
+### Step 7-基本. 測試模型
 (步驟不變)
-## (選項二) 新增模型方法二：用linux指令搜索模型的方法 (此方法廣泛適用於所有的模型, 不受 Ollama.com 網頁更新速度限制)
-### Step 6-Alt. 
-### Step 7-Alt. 
+
+## (新增模型方法二)：用 linux 指令搜索模型的方法 (此方法廣泛適用於所有的模型, 不受 Ollama.com 網頁更新速度限制)
+### Step 6-進階. 檢查 Ollama 已經載有哪些模型
+'''
+sudo docker exec -it open-webui ollama list
+'''
+### Step 7-進階. 
 
 ---
 
