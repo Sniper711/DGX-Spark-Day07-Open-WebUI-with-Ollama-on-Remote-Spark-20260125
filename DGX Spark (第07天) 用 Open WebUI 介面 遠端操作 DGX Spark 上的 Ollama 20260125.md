@@ -120,7 +120,6 @@ sudo docker exec it open-webui ollama pull qwen3.5:122b-a10b
 sudo docker exec -it open-webui ollama list
 ```
 - 若有出現在列表中，就去打開的 Open WEebUI Ollama 網頁按 F5 刷新一次，應可看到模型下拉選單有它。
-
 ### Step 7-進階. 測試模型
 
 ---
