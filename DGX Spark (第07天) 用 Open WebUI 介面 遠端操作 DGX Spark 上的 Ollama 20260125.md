@@ -129,10 +129,10 @@ sudo docker exec -it open-webui ollama list
 
 ---
 
-## Step 9. 停止 Open WebUI
+## Step 8. 停止 Open WebUI
 (不要做)(改成以下步驟)
-## 改為 Step 9. 停止 與 再次啟動 Open WebUI
-### 改為 Step 9-1. 停止 Open WebUI
+## 改為 Step 8. 停止 與 再次啟動 Open WebUI
+### 改為 Step 8-1. 停止 Open WebUI
 - 在 DGX Spark Server 的終端機上，停止 Open WebUI
 
   因為 `step 4-1` 已經設計 `--restart unless-stopped` 每次開機自動啟動，所以停止的指令是：
@@ -140,7 +140,7 @@ sudo docker exec -it open-webui ollama list
   docker stop open-webui
   ```
 
-### 改為 Step 9-2. 再次啟動 Open WebUI
+### 改為 Step 8-2. 再次啟動 Open WebUI
 - 在 DGX Spark Server 的終端機上，啟動 Open WebUI：
 
   因為 `step 4-1` 已經設計 `--restart unless-stopped` 每次開機自動啟動，所以再次啟動的指令會恢復每次開機自動啟動：
@@ -149,13 +149,13 @@ sudo docker exec -it open-webui ollama list
   ```
 ---
 
-## Step 10. 下一步
+## Step 9. 下一步
 (步驟不變)
 
 ---
 
-## Step 11. 清除與還原
-(步驟不變) **警告：不可隨意清除與還原**，且 Step 11 是在 DGX Spark Server 上執行的命令.
+## Step 10. 清除與還原
+(步驟不變) **警告：不可隨意清除與還原**，且 Step 10 是在 DGX Spark Server 上執行的命令.
 
 ---
 
