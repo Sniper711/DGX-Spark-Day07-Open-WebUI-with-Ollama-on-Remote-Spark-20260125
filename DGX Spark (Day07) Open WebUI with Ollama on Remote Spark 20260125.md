@@ -76,7 +76,7 @@ On this page,
 
 ---
 
-## Step 5. Launch Open WebUI
+## Step 5-1. Launch Open WebUI
 (Don't do it - follow the modified step below instead)
 - If you like to use Ollama locally on DGX Spark:
   - On DGX Spark browser
@@ -92,18 +92,35 @@ On this page,
 
 ---
 
-## Step 6. Create administrator account
+## Step 5-2. Create administrator account
 (no change) (However, the email address used to create the account **must be the same as the email address specified in the Step 4-1 command** in order to obtain admin privileges.) (This is very important, especially for future advanced setups where ComfyUI image generation is invoked directly from within the Ollama text chat interface.)
 
 ---
 
-## Step 7. Download and configure a model
+## (Adding models / Method 1): NVIDIA official (only for those models are listed on Ollama.com website)
+- Keep the Open WebUI Ollama web services open. Do NOT close them while adding models.
+### Step 6-Basic. Download and configure a model
+### Step 7-Basic. Test the model
 (no change)
 
----
-
-## Step 8. Test the model
-(no change)
+## (Adding models / Method 2): Linux command (widely for all models, not be restricted by Ollama.com website)
+- Keep the Open WebUI Ollama web services open. Do NOT close them while adding models.
+### Step 6-ADV. Download model
+- Check downloaded models on my Ollama service
+  ```
+  sudo docker exec -it open-webui ollama list
+  ```
+- Download model (for example, assume qwen3.5:122b-a10b is the model you want to add)
+  ```
+  sudo docker exec it open-webui ollama pull qwen3.5:122b-a10b
+  ```
+- Wait until the download is complete.
+- Repeat command to verify whenther the downloaded modeled is recognized by Ollama service.
+  ```
+  sudo docker exec -it open-webui ollama list
+  ```
+- If the model is present in the list, please refresh the open Open WebUI Ollama webpage (Press F5). It should then become visible in the model dropdown menu. 
+### Step 7-ADV. Test the model
 
 ---
 
@@ -111,10 +128,10 @@ On this page,
 
 ---
 
-## Step 9. Stop the Open WebUI
+## Step 8. Stop the Open WebUI
 (Don't do it - follow the modified step below instead)
-## Modified Step 9. Stop and Restart the Open WebUI
-### Modified Step 9-1. Stop the Open WebUI
+## Modified Step 8. Stop and Restart the Open WebUI
+### Modified Step 8-1. Stop the Open WebUI
 - On DGX Spark Server terminal, Stop Open WebUI
 
   Because `step 4-1` has already been designed with `--restart unless-stopped` for automatic startup on every boot, therefore the stop command is:
@@ -122,7 +139,7 @@ On this page,
   docker stop open-webui
   ```
 
-### Modified Step 9-2. Restart the Open WebUI
+### Modified Step 8-2. Restart the Open WebUI
 - On DGX Spark Server terminal, Restart Open WebUI
 
   Because `step 4-1` has already been designed with `--restart unless-stopped` for automatic startup on every boot, therefore the restart command will restore the automatic startup on every boot:
@@ -132,12 +149,12 @@ On this page,
 
 ---
 
-## Step 10. Next steps
+## Step 9. Next steps
 (no change)
 
 ---
 
-## Step 11. Cleanup and rollback
+## Step 10. Cleanup and rollback
 (no change) **Caution: DO NOT casually cleanup and rollback**, and the following commands should be run directly on the DGX Spark Server (not on your Computer/Tablet/Phone client).
 
 ---
