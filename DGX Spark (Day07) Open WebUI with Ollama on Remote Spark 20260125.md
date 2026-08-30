@@ -97,10 +97,13 @@ On this page,
 
 ---
 
+## Step 6. Select a model to download. Step 7. Load the model and submit a query
+(Don't do it - follow the modified step below instead)
+## Modified
 ## (Adding models / Method 1): NVIDIA official (only for those models are listed on Ollama.com website)
 - Keep the Open WebUI Ollama web services open. Do NOT close them while adding models.
-### Step 6-Basic. Download and configure a model
-### Step 7-Basic. Test the model
+### Step 6-Basic. Select a model to download
+### Step 7-Basic. Load the model and submit a query
 (no change)
 
 ## (Adding models / Method 2): Linux command (widely for all models, not be restricted by Ollama.com website)
