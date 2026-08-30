@@ -76,7 +76,7 @@
 
 ---
 
-## Step 5. 啟動 Open WebUI
+## Step 5-1. 啟動 Open WebUI
 (不要做)(改成以下步驟)
 - 若你要在 DGX Spark 本機使用 Ollama：
   - 在 DGX Spark Server 上
@@ -92,18 +92,19 @@
 
 ---
 
-## Step 6. 創建管理員帳戶
+## Step 5-2. 創建管理員帳戶
 (步驟不變)(但是**創建帳戶的 email 必須與步驟 `Step 4-1` 指令內的 email address 相同，才能擁有 admin 權限**)(這很重要，尤其將來做 Ollama 文字對話框內直接呼叫 ComfyUI 生圖的進階做法時需要)
 
 ---
 
-## Step 7. 下載並配置模型
+## (選項一) 新增模型方法一：NVIDIA官網方法 (僅適用在 Ollama.com 網頁有被搜索列出的模型)
+- 已開啟的 Open WebUI Olloma 網頁服務保持打開，不要關閉 Ollama
+### Step 6-Basic. 下載並配置模型
+### Step 7-Basic. 測試模型
 (步驟不變)
-
----
-
-## Step 8. 測試模型
-(步驟不變)
+## (選項二) 新增模型方法二：用linux指令搜索模型的方法 (此方法廣泛適用於所有的模型, 不受 Ollama.com 網頁更新速度限制)
+### Step 6-Alt. 
+### Step 7-Alt. 
 
 ---
 
