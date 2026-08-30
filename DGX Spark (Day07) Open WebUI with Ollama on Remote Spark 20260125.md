@@ -35,7 +35,7 @@ On this page,
   docker run -d \
     --gpus all \
     -p 3000:8080 \
-    -e WEBUI_ADMIN_EMAIL=<admin_email_address> \ 
+    -e WEBUI_ADMIN_EMAIL=<admin_email_address> \
     -v ollama:/root/.ollama \
     -v open-webui:/app/backend/data \
     --name open-webui \
