@@ -110,7 +110,18 @@
 ```
 sudo docker exec -it open-webui ollama list
 ```
-### Step 7-進階. 
+- 下載模型 (假設你要下載模型是 qwen3.5:122b-a10b)：
+```
+sudo docker exec it open-webui ollama pull qwen3.5:122b-a10b
+```
+- 等待下載完成
+- 再執行一次指令，確認下載模型被 Ollama 認到了嗎? 
+```
+sudo docker exec -it open-webui ollama list
+```
+- 若有出現在列表中，就去打開的 Open WEebUI Ollama 網頁按 F5 刷新一次，應可看到模型下拉選單有它。
+
+### Step 7-進階. 測試模型
 
 ---
 
