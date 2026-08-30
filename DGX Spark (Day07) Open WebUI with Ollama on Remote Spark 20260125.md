@@ -130,8 +130,8 @@ On this page,
 
 ## Step 8. Stop the Open WebUI
 (Don't do it - follow the modified step below instead)
-## Modified Step 8. Stop and Restart the Open WebUI
-### Modified Step 8-1. Stop the Open WebUI
+## Modified Step 8. Disable/Re-enable Open WebUI automatic startup
+### Modified Step 8-1. Disable
 - On DGX Spark Server terminal, Stop Open WebUI
 
   Because `step 4-1` has already been designed with `--restart unless-stopped` for automatic startup on every boot, therefore the stop command is:
@@ -139,7 +139,7 @@ On this page,
   docker stop open-webui
   ```
 
-### Modified Step 8-2. Restart the Open WebUI
+### Modified Step 8-2. Re-enable
 - On DGX Spark Server terminal, Restart Open WebUI
 
   Because `step 4-1` has already been designed with `--restart unless-stopped` for automatic startup on every boot, therefore the restart command will restore the automatic startup on every boot:
