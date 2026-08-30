@@ -39,7 +39,6 @@ On this page,
   docker run -d \
     --gpus all \
     -p 3000:8080 \
-    # Note: Replace the entire <admin_email_address> (including the angle brackets) hereunder, with the email address you will use to log in to Ollama, to ensure that this login has administrator privileges.
     -e WEBUI_ADMIN_EMAIL=<admin_email_address> \ 
     -v ollama:/root/.ollama \
     -v open-webui:/app/backend/data \
