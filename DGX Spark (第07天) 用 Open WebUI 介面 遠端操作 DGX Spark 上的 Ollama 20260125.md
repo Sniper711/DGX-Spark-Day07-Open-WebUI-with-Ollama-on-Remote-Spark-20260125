@@ -106,7 +106,9 @@
 ## (新增模型方法二)：用 linux 指令搜索模型的方法 (此方法廣泛適用於所有的模型, 不受 Ollama.com 網頁更新速度限制)
 - 已開啟的 Open WebUI Olloma 網頁服務保持打開，新增模型時請不要關閉 Ollama.
 ### Step 6-進階. 檢查 Ollama 已經載有哪些模型
-```sudo docker exec -it open-webui ollama list```
+```
+sudo docker exec -it open-webui ollama list
+```
 ### Step 7-進階. 
 
 ---
