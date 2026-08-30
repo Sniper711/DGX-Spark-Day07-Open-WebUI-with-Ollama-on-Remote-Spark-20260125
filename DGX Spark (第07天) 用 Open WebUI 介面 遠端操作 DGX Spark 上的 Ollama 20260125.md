@@ -32,7 +32,7 @@
 
 ### 改為 Step 4-1. 新增 Open WebUI 自訂埠配置
 - 在 DGX Spark Server 的終端機上，執行：
-- # 注意：把下方整個<admin_email_address>包括括弧，替換成 將來Ollama登入 用的 email address，以確保這個登入者擁有管理者身份，從而能打開 Ollama 更高階應用，例如在 Ollama 文字對話背景嵌入 ComfyUI 生圖與生影片服務等等。
+- 注意：把下方整個<admin_email_address>包括括弧，替換成 將來Ollama登入 用的 email address，以確保這個登入者擁有管理者身份，從而能打開 Ollama 更高階應用，例如在 Ollama 文字對話背景嵌入 ComfyUI 生圖與生影片服務等等。
   ```
   docker run -d \
     --gpus all \
